@@ -6,7 +6,7 @@ const MAX_SPEED = 250.0
 const FRICTION = 900.0
 const TURN_SPEED = 5.0
 @export var MAX_HEALTH = 5.0
-var health = MAX_HEALTH
+var health = 0
 var zoomed = false
 @export var max_bullets = 8
 @export var bullet_damage = 4
@@ -14,36 +14,40 @@ var bullets = max_bullets
 @export var bullet: PackedScene
 var GUI
 var reloading = false
+var active_input = true
 
 func _ready():
+	health = MAX_HEALTH
 	GUI = get_tree().get_first_node_in_group("GUI")
 	update_bullets()
 
 func _physics_process(delta):
-	var direction = Input.get_vector("Left", "Right","Up", "Down")
-	if direction.length()!=0:
-		velocity += Vector2.ZERO.direction_to(direction) * ACCEL * delta
-		velocity = velocity.clampf(-MAX_SPEED,MAX_SPEED)
-		if velocity.length()>MAX_SPEED:
-			velocity = velocity.normalized()*MAX_SPEED
-		$AnimatedSprite2D.play("Walk")
-		if $SoundTimer.time_left==0:
-			$AudioStreamPlayer2D.play()
-			$SoundTimer.start()
-	else:
-		$AnimatedSprite2D.play("Idle")
-	if direction.x==0:
-		velocity.x = move_toward(velocity.x, 0, FRICTION*delta)
-	if direction.y==0:
-		velocity.y = move_toward(velocity.y, 0, FRICTION*delta)
-	var mouse = get_global_mouse_position()
-	rotation = rotate_toward(rotation,position.angle_to_point(mouse)+PI/2,(abs(rotation-(position.angle_to_point(mouse)+PI/2))*3)*TURN_SPEED*delta)
-	move_and_slide()
+	if active_input:
+		$AudioListener2D.position = Vector2(0,0)
+		var direction = Input.get_vector("Left", "Right","Up", "Down")
+		if direction.length()!=0:
+			velocity += Vector2.ZERO.direction_to(direction) * ACCEL * delta
+			velocity = velocity.clampf(-MAX_SPEED,MAX_SPEED)
+			if velocity.length()>MAX_SPEED:
+				velocity = velocity.normalized()*MAX_SPEED
+			$AnimatedSprite2D.play("Walk")
+			if $SoundTimer.time_left==0:
+				$AudioStreamPlayer2D.play()
+				$SoundTimer.start()
+		else:
+			$AnimatedSprite2D.play("Idle")
+		if direction.x==0:
+			velocity.x = move_toward(velocity.x, 0, FRICTION*delta)
+		if direction.y==0:
+			velocity.y = move_toward(velocity.y, 0, FRICTION*delta)
+		var mouse = get_global_mouse_position()
+		rotation = rotate_toward(rotation,position.angle_to_point(mouse)+PI/2,(abs(rotation-(position.angle_to_point(mouse)+PI/2))*3)*TURN_SPEED*delta)
+		move_and_slide()
 	
-	if Input.is_action_pressed("Interact1"):
-		shoot()
-	if Input.is_action_pressed("Interact2"):
-		reload()
+		if Input.is_action_pressed("Interact1"):
+			shoot()
+		if Input.is_action_pressed("Interact2"):
+			reload()
 		#if $ZoomTimer.time_left==0:
 			#if zoomed:
 				#zoomed = false
@@ -52,6 +56,8 @@ func _physics_process(delta):
 				#zoomed = true
 				#$Camera2D.zoom = Vector2(0.05,0.05)
 			#$ZoomTimer.start()
+	else:
+		$AudioListener2D.position = Vector2(0,1000000000)
 
 func shoot():
 	if bullets>0:
@@ -80,8 +86,9 @@ func reload():
 func take_damage(damage):
 	if $HitCooldown.time_left<=0:
 		health-=damage
-		if health==0:
-			print("died")
+		if health<=0:
+			if get_parent().name == "Main":
+				get_parent().game_over("Death")
 		if GUI:
 			if GUI.get_child(0):
 				GUI.get_child(0).text=str(roundi((health/MAX_HEALTH)*100))+"%"

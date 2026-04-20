@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var split_on_death = false
 @export var rotate_to_player = true
 @export var perma_lock = false
+@export var damage_range: Array[int] = [3,8]
 var movement_target_position: Vector2
 var health
 var movement_speed
@@ -71,7 +72,8 @@ func _physics_process(delta):
 	if collision:
 		var collider = collision.get_collider()
 		if collider.get_collision_layer_value(1):
-			collider.take_damage(1)
+			var damage = randi_range(damage_range[0],damage_range[1])
+			collider.take_damage(damage)
 
 func take_damage(damage):
 	health-=damage
@@ -92,4 +94,5 @@ func _on_area_2d_body_entered(body):
 		body.deal_damage(self)
 		body.queue_free()
 	if body.get_collision_layer_value(1):
-			body.take_damage(1)
+			var damage = randi_range(damage_range[0],damage_range[1])
+			body.take_damage(damage)

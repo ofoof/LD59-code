@@ -114,6 +114,7 @@ light_mask = 0
 scale = Vector2(0.5, 0.5)
 collision_mask = 5
 script = ExtResource("1_vvw5e")
+MAX_HEALTH = 100.0
 bullet = ExtResource("2_inwu4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=612414148]
@@ -124,7 +125,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="HitCooldown" type="Timer" parent="." unique_id=1133061525]
-wait_time = 0.4
+wait_time = 0.3
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1587065419]

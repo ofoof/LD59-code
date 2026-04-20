@@ -16,12 +16,13 @@ motion_mode = 1
 script = ExtResource("1_w2l0k")
 health_max = 38
 health_min = 24
-speed_mod = 40
+speed_mod = 55
 speed_max = 1.0
 DETECTION_RANGE = 500
 split_on_death = true
 rotate_to_player = false
 perma_lock = true
+damage_range = Array[int]([5, 6])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=559112084]
 shape = SubResource("CircleShape2D_lngoa")
@@ -36,7 +37,6 @@ texture = ExtResource("2_w2l0k")
 wait_time = 0.1
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=794962475]
-navigation_layers = 255
 avoidance_enabled = true
 radius = 100.0
 neighbor_distance = 1000.0

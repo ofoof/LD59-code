@@ -31,7 +31,6 @@ texture = ExtResource("2_0tdfy")
 wait_time = 0.1
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1935070344]
-navigation_layers = 255
 avoidance_enabled = true
 radius = 100.0
 neighbor_distance = 1000.0
