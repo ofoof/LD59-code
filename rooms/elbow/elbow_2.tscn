@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dm7x2cxqqgviv"]
+
+[ext_resource type="Texture2D" uid="uid://jyum3ttm37aw" path="res://arts/rooms/square/RoomTile4OlieElbow-Junction__Black.png" id="1_58b6u"]
+[ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://alien_1.tscn" id="2_vb1as"]
+[ext_resource type="PackedScene" uid="uid://g4iluaesv63b" path="res://wall.tscn" id="3_yilg4"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_o1wug"]
+vertices = PackedVector2Array(83.41406, 76.078125, 150, -15.3984375, 150, 254, -20.078125, 0.75, 9.890625, 90.55469, -33.445313, -29.890625, 150, -158, 150, -33.773438, 55.25, -102.74219, -262, -158, -153.89063, 13.4453125, -150, 142, -262, 142, -110.55469, 133.89063, -150, 254)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 0, 4), PackedInt32Array(3, 4, 5), PackedInt32Array(6, 7, 8), PackedInt32Array(9, 6, 8), PackedInt32Array(8, 3, 5), PackedInt32Array(9, 8, 5, 10), PackedInt32Array(11, 12, 9, 10, 13), PackedInt32Array(4, 0, 2, 14, 13), PackedInt32Array(11, 13, 14)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-272, 152.00003, -272, -167.99997, 159.99998, -168.00002, 160.00003, 264, -159.99997, 264, -159.99998, 152.00002)])
+
+[node name="elbow_2" type="Node2D" unique_id=1413922025]
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1757896717]
+z_index = -5
+rotation = 3.1415927
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_58b6u")
+
+[node name="Alien1" parent="." unique_id=325876984 instance=ExtResource("2_vb1as")]
+position = Vector2(71, -140)
+rotation = 3.1415927
+scale = Vector2(0.305, 0.305)
+
+[node name="Alien2" parent="." unique_id=857427796 instance=ExtResource("2_vb1as")]
+position = Vector2(61, 148)
+rotation = 3.1415927
+scale = Vector2(0.365, 0.365)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=634625121]
+position = Vector2(0, -8)
+rotation = 3.1415927
+navigation_polygon = SubResource("NavigationPolygon_o1wug")
+
+[node name="Wall2" parent="NavigationRegion2D" unique_id=1088609404 instance=ExtResource("3_yilg4")]
+position = Vector2(-72, 52)
+rotation = -0.34535956
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall4" parent="NavigationRegion2D" unique_id=302357766 instance=ExtResource("3_yilg4")]
+position = Vector2(69.33333, -13.3333435)
+rotation = 2.1999822
+scale = Vector2(0.5, 0.5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1308912881]
+rotation = 3.1415927
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1680226885]
+position = Vector2(0, -459)
+polygon = PackedVector2Array(-256, 283, -256, 203, 256, 203, 256, 715, 176, 715, 176, 283)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1086176031]
+rotation = 3.1415927
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=735484191]
+position = Vector2(-3, 215)
+polygon = PackedVector2Array(-252.99998, -38.999985, -252.99998, 41.00003, -173, 41, -173, -39)

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://depxlu8h7m8wt"]
+
+[node name="GUI" type="CanvasLayer" unique_id=442663485 groups=["GUI"]]
+
+[node name="Health" type="Label" parent="." unique_id=1513459012]
+offset_left = 71.0
+offset_top = 502.0
+offset_right = 246.0
+offset_bottom = 595.0
+theme_override_font_sizes/font_size = 68
+text = "100%"

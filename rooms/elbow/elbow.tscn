@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dolped2kr60ah"]
+
+[ext_resource type="Texture2D" uid="uid://jyum3ttm37aw" path="res://arts/rooms/square/RoomTile4OlieElbow-Junction__Black.png" id="1_ogj8x"]
+[ext_resource type="PackedScene" uid="uid://tv715gido8ly" path="res://alien_spawner.tscn" id="2_86pne"]
+[ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://alien_1.tscn" id="2_eo8mx"]
+[ext_resource type="PackedScene" uid="uid://bujcqg7tc2coh" path="res://alien_2.tscn" id="4_k1xru"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_koah4"]
+vertices = PackedVector2Array(150, -150, 150, 262, -150, 262, -150, 150, -262, -150, -262, 150)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-272, 160, -272, -160, 160, -160, 160, 272, -160, 272, -160, 160)])
+
+[node name="Elbow" type="Node2D" unique_id=1551235418]
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1956337378]
+z_index = -5
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ogj8x")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2132276027]
+navigation_polygon = SubResource("NavigationPolygon_koah4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1511128863]
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=331813022]
+position = Vector2(0, -459)
+polygon = PackedVector2Array(-256, 283, -256, 203, 256, 203, 256, 715, 176, 715, 176, 283)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1662731310]
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=1810251760]
+position = Vector2(-3, 215)
+polygon = PackedVector2Array(-252.99998, -38.999985, -252.99998, 41.00003, -173, 41, -173, -39)
+
+[node name="AlienSpawner" parent="." unique_id=517353845 instance=ExtResource("2_86pne")]
+position = Vector2(-101.333336, -58.666668)
+aliens = Array[PackedScene]([ExtResource("2_eo8mx"), ExtResource("4_k1xru"), ExtResource("2_eo8mx"), ExtResource("2_eo8mx"), ExtResource("2_eo8mx")])
+chance = 23
+
+[node name="AlienSpawner2" parent="." unique_id=1392099677 instance=ExtResource("2_86pne")]
+position = Vector2(-32, 149.33333)
+aliens = Array[PackedScene]([ExtResource("4_k1xru")])
+chance = 5
+
+[node name="AlienSpawner3" parent="." unique_id=1498185615 instance=ExtResource("2_86pne")]
+position = Vector2(90.66667, -26.666672)
+aliens = Array[PackedScene]([ExtResource("2_eo8mx")])
+chance = 25
