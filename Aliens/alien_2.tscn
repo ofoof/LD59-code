@@ -18,9 +18,10 @@ health_max = 38
 health_min = 24
 speed_mod = 40
 speed_max = 1.0
-DETECTION_RANGE = 350
+DETECTION_RANGE = 500
 split_on_death = true
 rotate_to_player = false
+perma_lock = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=559112084]
 shape = SubResource("CircleShape2D_lngoa")

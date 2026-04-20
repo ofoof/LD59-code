@@ -71,8 +71,11 @@ var Elbow2_tag
 var Elbow3_tag
 var EndRoom_tag
 
+var Start_pos = [9,9]
+
 @export var Airlock: PackedScene
 @export var Closed_Door: PackedScene
+@export var Start_Room: PackedScene
 
 var Ends = []
 # Called when the node enters the scene tree for the first time.
@@ -93,18 +96,18 @@ func _ready():
 	var player = get_tree().get_first_node_in_group("Player")
 	
 	var placement
-	var rand_placement = Cross_tag
-	var placement_position = [9,9]
+	var rand_placement = Start_Room
+	var placement_position = Start_pos
 	grid_avail[placement_position[0]][placement_position[1]]=true
-	grid[placement_position[0]][placement_position[1]]=rand_placement[0]
-	placement = rand_placement[1][0].instantiate()
+	grid[placement_position[0]][placement_position[1]]="Cross"
+	placement = rand_placement.instantiate()
 	placement.position = Vector2(placement_position[0]*TILE_SIZE,placement_position[1]*TILE_SIZE)
-	get_tree().current_scene.add_child.call_deferred(placement)
+	add_child.call_deferred(placement)
 	
 	if player:
 		player.position=Vector2(placement_position[0]*TILE_SIZE,placement_position[1]*TILE_SIZE)
-	place_tile_string(rand_placement,placement_position,15)
-	place_tile_string(rand_placement,placement_position,15)
+	place_tile_string(["Cross",rand_placement],placement_position,15)
+	place_tile_string(["Cross",rand_placement],placement_position,15)
 	
 	for i in range(4):
 		var new_tile = get_used_tiles().pick_random()
@@ -287,7 +290,7 @@ func place_tile(type,new_position,new_rotation):
 		var new_tile=type[1].pick_random().instantiate()
 		new_tile.position = Vector2(new_position[0]*TILE_SIZE,new_position[1]*TILE_SIZE)
 		new_tile.rotation = new_rotation
-		get_tree().current_scene.add_child.call_deferred(new_tile)
+		add_child.call_deferred(new_tile)
 		return new_tile
 
 func load_ends(objectives):
@@ -301,13 +304,14 @@ func load_ends(objectives):
 		var new_tile=end_room[0][1].pick_random().instantiate()
 		new_tile.position = Vector2(end_room[1][0]*TILE_SIZE,end_room[1][1]*TILE_SIZE)
 		new_tile.rotation = end_room[2]
-		get_tree().current_scene.add_child.call_deferred(new_tile)
+		add_child.call_deferred(new_tile)
 	for obj_room in Objected:
 		print(obj_room)
 		var new_tile=ObjectiveRooms.pick_random().instantiate()
 		new_tile.position = Vector2(obj_room[1][0]*TILE_SIZE,obj_room[1][1]*TILE_SIZE)
 		new_tile.rotation = obj_room[2]
-		get_tree().current_scene.add_child.call_deferred(new_tile)
+		add_child.call_deferred(new_tile)
+	return Objected
 
 func airlock_fill():
 	for i in range(bounds[0]-1):
@@ -324,7 +328,7 @@ func airlock_fill():
 				if tile_connection_1 and tile_connection_2:
 					var new_airlock = Airlock.instantiate()
 					new_airlock.position = Vector2((i+.5)*TILE_SIZE,j*TILE_SIZE)
-					get_tree().current_scene.add_child.call_deferred(new_airlock)
+					add_child.call_deferred(new_airlock)
 				elif tile_connection_1 or tile_connection_2:
 					var con1 = grid[i][j]
 					var con2 = grid[i+1][j]
@@ -341,7 +345,7 @@ func airlock_fill():
 					if !(con1==true or con2==true):
 						var new_door = Closed_Door.instantiate()
 						new_door.position = Vector2((i+0.5)*TILE_SIZE,j*TILE_SIZE)
-						get_tree().current_scene.add_child.call_deferred(new_door)
+						add_child.call_deferred(new_door)
 	for i in range(bounds[0]):
 		for j in range(bounds[1]-1):
 			if grid_avail[i][j]==true and grid_avail[i][j+1]==true:
@@ -357,7 +361,7 @@ func airlock_fill():
 					var new_airlock = Airlock.instantiate()
 					new_airlock.position = Vector2(i*TILE_SIZE,(j+.5)*TILE_SIZE)
 					new_airlock.rotation = PI/2
-					get_tree().current_scene.add_child.call_deferred(new_airlock)
+					add_child.call_deferred(new_airlock)
 				elif tile_connection_1 or tile_connection_2:
 					var con1 = grid[i][j]
 					var con2 = grid[i][j+1]
@@ -375,4 +379,4 @@ func airlock_fill():
 						var new_door = Closed_Door.instantiate()
 						new_door.position = Vector2(i*TILE_SIZE,(j+.5)*TILE_SIZE)
 						new_door.rotation = PI/2
-						get_tree().current_scene.add_child.call_deferred(new_door)
+						add_child.call_deferred(new_door)
