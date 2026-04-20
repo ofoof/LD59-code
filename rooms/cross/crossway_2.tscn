@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://qpxx8ggeir8v" path="res://arts/rooms/square/RoomTile4OlieBlack.png" id="1_sfhi8"]
 [ext_resource type="PackedScene" uid="uid://g4iluaesv63b" path="res://wall.tscn" id="2_axjt8"]
 [ext_resource type="PackedScene" uid="uid://cfob0qs7qd7c4" path="res://box_texture.tscn" id="3_axjt8"]
-[ext_resource type="PackedScene" uid="uid://tv715gido8ly" path="res://alien_spawner.tscn" id="3_puq5g"]
-[ext_resource type="PackedScene" uid="uid://bujcqg7tc2coh" path="res://alien_2.tscn" id="4_ykkbt"]
-[ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://alien_1.tscn" id="5_8fqyf"]
+[ext_resource type="PackedScene" uid="uid://tv715gido8ly" path="res://Aliens/alien_spawner.tscn" id="3_puq5g"]
+[ext_resource type="PackedScene" uid="uid://bujcqg7tc2coh" path="res://Aliens/alien_2.tscn" id="4_ykkbt"]
+[ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://Aliens/alien_1.tscn" id="5_8fqyf"]
 [ext_resource type="Texture2D" uid="uid://dep5uobw4jyhg" path="res://arts/flashlight.png" id="7_puq5g"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yveig"]
@@ -14,6 +14,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(-163, -259, 157, -259, 157, -147, 269, -147, 269, 173, 157, 173, 157, 285, -163, 285, -163, 173, -275, 173, -275, -147, -163, -147)])
 
 [node name="crossway_2" type="Node2D" unique_id=627939477]
+scale = Vector2(1.5, 1.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=449415206]
 z_index = -5
