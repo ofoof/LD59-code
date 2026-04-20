@@ -2,13 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://qpxx8ggeir8v" path="res://arts/rooms/square/RoomTile4OlieBlack.png" id="1_sfhi8"]
 [ext_resource type="PackedScene" uid="uid://g4iluaesv63b" path="res://wall.tscn" id="2_axjt8"]
+[ext_resource type="PackedScene" uid="uid://cfob0qs7qd7c4" path="res://box_texture.tscn" id="3_axjt8"]
 [ext_resource type="PackedScene" uid="uid://tv715gido8ly" path="res://alien_spawner.tscn" id="3_puq5g"]
 [ext_resource type="PackedScene" uid="uid://bujcqg7tc2coh" path="res://alien_2.tscn" id="4_ykkbt"]
 [ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://alien_1.tscn" id="5_8fqyf"]
+[ext_resource type="Texture2D" uid="uid://dep5uobw4jyhg" path="res://arts/flashlight.png" id="7_puq5g"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yveig"]
-vertices = PackedVector2Array(259, -137, 259, 163, 147, 163, 99.203125, 155.20313, 99.203125, 52.796875, 147, -137, 147, -249, -3.203125, 52.796875, -51.28125, 20.445313, -153, -137, -153, -249, -101.44531, 109.71875, -3.203125, 155.20313, 147, 275, -153, 275, -153, 163, -190.71875, 59.554688, -265, 163, -140.55469, -29.71875, -265, -137)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 5, 4, 7, 8, 9, 10), PackedInt32Array(11, 8, 7, 12), PackedInt32Array(12, 3, 2, 13, 14, 15), PackedInt32Array(11, 12, 15), PackedInt32Array(16, 11, 15, 17), PackedInt32Array(18, 16, 17, 19, 9), PackedInt32Array(9, 8, 18)])
+vertices = PackedVector2Array(7.2109375, 230.57031, 41.320313, 275, -153, 275, -153, 163, -265, -137, -203.98438, -137, -219.29688, -111.64844, -82.421875, -5.3828125, -70.921875, -44.257813, -45.84375, -18.59375, 88.42969, 168.21094, -265, 163, -167.69531, -80.47656, -167.35938, -79.234375, -180.61719, -34.421875, 147, -137, 114.234375, 136.17969, 93.69531, 175.07031, 27.40625, -90.15625, 259, -137, 259, 163, 165.03125, 163, -153, -191.22656, -153, -249, 147, -249, -96.09375, -195.14844, -44.15625, -163.40625, -50.796875, -156.90625, -117.5, -169.78906, 128.11719, 275, 117.484375, 275, 121.8125, 271.67188)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6), PackedInt32Array(7, 8, 9, 10, 0), PackedInt32Array(11, 4, 6, 12, 13, 14), PackedInt32Array(15, 16, 17, 10, 9, 18), PackedInt32Array(3, 11, 14, 7), PackedInt32Array(15, 19, 20, 21, 16), PackedInt32Array(22, 23, 24, 25), PackedInt32Array(0, 3, 7), PackedInt32Array(26, 27, 25), PackedInt32Array(25, 28, 22), PackedInt32Array(26, 25, 24, 15), PackedInt32Array(26, 15, 18), PackedInt32Array(29, 30, 31)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-163, -259, 157, -259, 157, -147, 269, -147, 269, 173, 157, 173, 157, 285, -163, 285, -163, 173, -275, 173, -275, -147, -163, -147)])
 
 [node name="crossway_2" type="Node2D" unique_id=627939477]
@@ -25,13 +27,44 @@ position = Vector2(3, -13)
 navigation_polygon = SubResource("NavigationPolygon_yveig")
 
 [node name="Box1" parent="NavigationRegion2D" unique_id=1088609404 instance=ExtResource("2_axjt8")]
-position = Vector2(47.999985, 103.999985)
+position = Vector2(139.00002, 215)
+rotation = 0.48578307
+scale = Vector2(0.45860338, 0.4542203)
+
+[node name="Box2" parent="NavigationRegion2D" unique_id=2115283642 instance=ExtResource("2_axjt8")]
+position = Vector2(78.99999, 240)
+rotation = -2.2255926
 scale = Vector2(0.4, 0.4)
 
-[node name="Box2" parent="NavigationRegion2D" unique_id=684543264 instance=ExtResource("2_axjt8")]
-position = Vector2(-120.999985, 40.000004)
-rotation = 0.5119738
+[node name="Box3" parent="NavigationRegion2D" unique_id=1034479915 instance=ExtResource("2_axjt8")]
+position = Vector2(-149, -129)
+rotation = -1.0274291
 scale = Vector2(0.4, 0.4)
+
+[node name="Box4" parent="NavigationRegion2D" unique_id=1631685093 instance=ExtResource("2_axjt8")]
+position = Vector2(-117, -68.999985)
+rotation = -1.2832263
+scale = Vector2(0.4, 0.4)
+
+[node name="Box5" parent="NavigationRegion2D" unique_id=625745075 instance=ExtResource("2_axjt8")]
+position = Vector2(-44.999992, -91)
+rotation = -2.3445385
+scale = Vector2(0.4, 0.4)
+
+[node name="Box6" parent="NavigationRegion2D" unique_id=478954484 instance=ExtResource("2_axjt8")]
+position = Vector2(-90.00001, -123.00001)
+rotation = -2.4405026
+scale = Vector2(0.4, 0.4)
+
+[node name="Box7" parent="NavigationRegion2D" unique_id=1875447393 instance=ExtResource("2_axjt8")]
+position = Vector2(-121, -104.00001)
+rotation = -1.8329235
+scale = Vector2(0.4, 0.4)
+
+[node name="Box_texure" parent="NavigationRegion2D" unique_id=113054374 instance=ExtResource("3_axjt8")]
+z_index = 14
+position = Vector2(109, 226)
+scale = Vector2(0.18187317, 0.1774484)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1691454651]
 collision_layer = 4
@@ -66,11 +99,20 @@ position = Vector2(503, 221)
 polygon = PackedVector2Array(-327, -45, -327, 35, -247, 35, -247, -45)
 
 [node name="AlienSpawner" parent="." unique_id=517353845 instance=ExtResource("3_puq5g")]
-position = Vector2(16.000004, -80)
-aliens = Array[PackedScene]([ExtResource("4_ykkbt")])
-chance = 88
+position = Vector2(-141, 88)
+aliens = Array[PackedScene]([ExtResource("4_ykkbt"), ExtResource("5_8fqyf"), ExtResource("5_8fqyf")])
+chance = 67
 
 [node name="AlienSpawner2" parent="." unique_id=672216728 instance=ExtResource("3_puq5g")]
-position = Vector2(96, 58.66667)
-aliens = Array[PackedScene]([ExtResource("5_8fqyf"), ExtResource("5_8fqyf"), ExtResource("5_8fqyf"), ExtResource("4_ykkbt")])
-chance = 21
+position = Vector2(107, -121)
+aliens = Array[PackedScene]([ExtResource("5_8fqyf"), ExtResource("4_ykkbt"), ExtResource("4_ykkbt"), ExtResource("4_ykkbt")])
+chance = 12
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1870496593]
+z_index = -1
+position = Vector2(32.43376, 164.33392)
+rotation = 8.775533
+scale = Vector2(0.14695571, 0.13432562)
+color = Color(0.19215687, 0.78039217, 0.36862746, 1)
+energy = 30.0
+texture = ExtResource("7_puq5g")
