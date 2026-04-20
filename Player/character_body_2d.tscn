@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://caqkjufb02l25" path="res://arts/Walk_anim/16.png" id="20_4bwuy"]
 [ext_resource type="Texture2D" uid="uid://brhrt7ccyeu5j" path="res://arts/Walk_anim/17.png" id="21_xjb3d"]
 [ext_resource type="PackedScene" uid="uid://depxlu8h7m8wt" path="res://Player/gui.tscn" id="28_1mqe7"]
+[ext_resource type="PackedScene" uid="uid://d2boh05cl5mbi" path="res://radar.tscn" id="29_qwwot"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ghijl"]
 radius = 56.0803
@@ -169,3 +170,7 @@ wait_time = 0.3
 one_shot = true
 
 [node name="GUI" parent="." unique_id=442663485 instance=ExtResource("28_1mqe7")]
+
+[node name="Radar" parent="." unique_id=1384825680 instance=ExtResource("29_qwwot")]
+position = Vector2(-1.9073486e-06, 3.0517578e-05)
+scale = Vector2(0.175, 0.17499998)

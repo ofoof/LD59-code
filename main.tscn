@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c7ddnp80kj4ii" path="res://arts/rooms/other/Untitled137_20260417210553.png" id="5_272bh"]
 [ext_resource type="Texture2D" uid="uid://cvlf7b427bm05" path="res://arts/rooms/other/Untitled137_20260417210557.png" id="6_5vw27"]
 [ext_resource type="Texture2D" uid="uid://dt6t0v42qohqg" path="res://arts/space2.png" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://c34ae52ncoop" path="res://Player/character_body_2d.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://li6j4amvfp3y" path="res://level_gen.tscn" id="7_272bh"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_h2yge"]
@@ -350,3 +351,5 @@ scale = Vector2(2.25, 2.25)
 energy = 765.8
 range_item_cull_mask = 2
 texture = ExtResource("6_7mycd")
+
+[node name="Player" parent="." unique_id=612887957 instance=ExtResource("6_272bh")]

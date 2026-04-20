@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b2is1pg41gdw"]
+
+[ext_resource type="Texture2D" uid="uid://brtiyh8b5m0va" path="res://arts/pointlight.png" id="1_npdww"]
+
+[node name="Tracker" type="Sprite2D" unique_id=667966421]
+z_index = 1
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("1_npdww")
