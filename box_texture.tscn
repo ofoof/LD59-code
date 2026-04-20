@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cfob0qs7qd7c4"]
+
+[ext_resource type="Texture2D" uid="uid://c20jx4wonuf12" path="res://arts/box.png" id="1_m3t6d"]
+
+[node name="Box_texure" type="Sprite2D" unique_id=113054374]
+position = Vector2(9.298325e-06, 5.722046e-06)
+scale = Vector2(0.53112036, 0.5400844)
+texture = ExtResource("1_m3t6d")

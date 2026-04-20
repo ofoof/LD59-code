@@ -3,8 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://qpxx8ggeir8v" path="res://arts/rooms/square/RoomTile4OlieBlack.png" id="1_c3tq6"]
 [ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://alien_1.tscn" id="2_pmko2"]
 [ext_resource type="PackedScene" uid="uid://g4iluaesv63b" path="res://wall.tscn" id="3_6nuss"]
+[ext_resource type="Texture2D" uid="uid://brtiyh8b5m0va" path="res://arts/pointlight.png" id="3_336ir"]
 [ext_resource type="PackedScene" uid="uid://tv715gido8ly" path="res://alien_spawner.tscn" id="4_6nuss"]
-[ext_resource type="Texture2D" uid="uid://dep5uobw4jyhg" path="res://arts/flashlight.png" id="4_336ir"]
+[ext_resource type="Texture2D" uid="uid://bwcmi3ihsitvi" path="res://arts/flahslight2.png" id="4_qygy7"]
 [ext_resource type="PackedScene" uid="uid://bujcqg7tc2coh" path="res://alien_2.tscn" id="5_pmko2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tqd7v"]
@@ -79,18 +80,19 @@ polygon = PackedVector2Array(-327, -45, -327, 35, -247, 35, -247, -45)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=83247667]
 position = Vector2(-118, 51.333332)
-scale = Vector2(0.2538482, 0.09067194)
+rotation = 3.0178316
+scale = Vector2(0.012666512, 0.033589784)
 color = Color(0.19215687, 0.78039217, 0.36862746, 1)
-energy = 100.0
-texture = ExtResource("4_336ir")
+energy = 57.0
+texture = ExtResource("3_336ir")
 
 [node name="PointLight2D2" type="PointLight2D" parent="." unique_id=860554793]
-position = Vector2(-155.33333, -17.333334)
-rotation = 2.423915
-scale = Vector2(0.22032519, 0.17547959)
+position = Vector2(-154.66667, 16.000008)
+rotation = 6.9264045
+scale = Vector2(0.061498675, 0.05707283)
 color = Color(0.19215687, 0.78039217, 0.36862746, 1)
-energy = 100.0
-texture = ExtResource("4_336ir")
+energy = 49.25
+texture = ExtResource("4_qygy7")
 
 [node name="AlienSpawner" parent="." unique_id=517353845 instance=ExtResource("4_6nuss")]
 position = Vector2(16.000004, -80)
