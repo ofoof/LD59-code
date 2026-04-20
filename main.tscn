@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bt481xxyssb4d"]
 
-[ext_resource type="Script" uid="uid://bi6nxpikwmteg" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="Script" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="Texture2D" uid="uid://brtiyh8b5m0va" path="res://arts/pointlight.png" id="4_272bh"]
 [ext_resource type="Texture2D" uid="uid://dt6t0v42qohqg" path="res://arts/space2.png" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://c34ae52ncoop" path="res://Player/character_body_2d.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://li6j4amvfp3y" path="res://level_gen.tscn" id="7_272bh"]
+
 
 [node name="Main" type="Node2D" unique_id=989697719]
 modulate = Color(0.001361685, 0.001361685, 0.001361685, 1)
