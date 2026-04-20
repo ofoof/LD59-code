@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bs3bvkawte743" path="res://arts/Walk_anim/15.png" id="19_r462t"]
 [ext_resource type="Texture2D" uid="uid://caqkjufb02l25" path="res://arts/Walk_anim/16.png" id="20_4bwuy"]
 [ext_resource type="Texture2D" uid="uid://brhrt7ccyeu5j" path="res://arts/Walk_anim/17.png" id="21_xjb3d"]
+[ext_resource type="PackedScene" uid="uid://depxlu8h7m8wt" path="res://Player/gui.tscn" id="28_1mqe7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ghijl"]
 radius = 56.0803
@@ -128,11 +129,22 @@ one_shot = true
 position_smoothing_speed = 15.0
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=147905397]
+visible = false
 position = Vector2(-18, -344.00003)
 rotation = 1.6013428
 scale = Vector2(0.425, 0.35)
 energy = 100.0
 texture = ExtResource("3_787ea")
+
+[node name="PointLight2D2" type="PointLight2D" parent="PointLight2D" unique_id=1264847201]
+position = Vector2(807.7407, -81.42273)
+rotation = -1.5959548
+scale = Vector2(0.49992496, 0.4118558)
+skew = -0.01192832
+energy = 100.0
+blend_mode = 2
+range_item_cull_mask = 5
+texture = ExtResource("11_c7av4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1896010073]
 light_mask = 4
@@ -154,13 +166,7 @@ wait_time = 0.5
 one_shot = true
 
 [node name="ZoomTimer" type="Timer" parent="." unique_id=432743070]
-wait_time = 0.1
+wait_time = 0.3
 one_shot = true
 
-[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1264847201]
-position = Vector2(0, 3.0517578e-05)
-scale = Vector2(0.175, 0.175)
-energy = 100.0
-blend_mode = 2
-range_item_cull_mask = 5
-texture = ExtResource("11_c7av4")
+[node name="GUI" parent="." unique_id=442663485 instance=ExtResource("28_1mqe7")]

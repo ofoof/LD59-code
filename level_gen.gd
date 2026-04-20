@@ -56,6 +56,7 @@ const TILE_SIZE=780
 @export var Elbow2: Array[PackedScene] = []
 @export var Elbow3: Array[PackedScene] = []
 @export var EndRoom: Array[PackedScene] = []
+@export var ObjectiveRooms: Array[PackedScene] = []
 
 var Cross_tag
 var HallH_tag
@@ -71,6 +72,8 @@ var Elbow3_tag
 var EndRoom_tag
 
 @export var Airlock: PackedScene
+
+var Ends = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Cross_tag = ["Cross",Cross]
@@ -119,6 +122,11 @@ func _ready():
 			if [i,j] in get_used_tiles():
 				force_cap([i,j])			
 	airlock_fill()
+	if get_tree().get_first_node_in_group("Radar"):
+		print("radar active")
+		#load_ends(2)
+	else:
+		load_ends(0)
 	
 func place_tile_string(start_tile,start_position,string_length):
 	var placement
@@ -272,11 +280,33 @@ func available_rooms(new_position):
 		return rooms
 			
 func place_tile(type,new_position,new_rotation):
-	var new_tile=type[1].pick_random().instantiate()
-	new_tile.position = Vector2(new_position[0]*TILE_SIZE,new_position[1]*TILE_SIZE)
-	new_tile.rotation = new_rotation
-	get_tree().current_scene.add_child.call_deferred(new_tile)
-	return new_tile
+	if type[0] == "EndRoom":
+		Ends.append([type,new_position,new_rotation,0])
+	else:
+		var new_tile=type[1].pick_random().instantiate()
+		new_tile.position = Vector2(new_position[0]*TILE_SIZE,new_position[1]*TILE_SIZE)
+		new_tile.rotation = new_rotation
+		get_tree().current_scene.add_child.call_deferred(new_tile)
+		return new_tile
+
+func load_ends(objectives):
+	var Objected = []
+	for i in range(objectives):
+		if len(Ends)>0:
+			var random = randi_range(0,len(Ends)-1)
+			Objected.append(Ends[random])
+			Ends.remove_at(random)
+	for end_room in Ends:
+		var new_tile=end_room[0][1].pick_random().instantiate()
+		new_tile.position = Vector2(end_room[1][0]*TILE_SIZE,end_room[1][1]*TILE_SIZE)
+		new_tile.rotation = end_room[2]
+		get_tree().current_scene.add_child.call_deferred(new_tile)
+	for obj_room in Objected:
+		print(obj_room)
+		var new_tile=ObjectiveRooms.pick_random().instantiate()
+		new_tile.position = Vector2(obj_room[1][0]*TILE_SIZE,obj_room[1][1]*TILE_SIZE)
+		new_tile.rotation = obj_room[2]
+		get_tree().current_scene.add_child.call_deferred(new_tile)
 
 func airlock_fill():
 	for i in range(bounds[0]-1):

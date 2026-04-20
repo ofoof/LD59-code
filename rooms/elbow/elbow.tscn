@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dolped2kr60ah"]
 
 [ext_resource type="Texture2D" uid="uid://jyum3ttm37aw" path="res://arts/rooms/square/RoomTile4OlieElbow-Junction__Black.png" id="1_ogj8x"]
-[ext_resource type="PackedScene" uid="uid://tv715gido8ly" path="res://alien_spawner.tscn" id="2_86pne"]
-[ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://alien_1.tscn" id="2_eo8mx"]
-[ext_resource type="PackedScene" uid="uid://bujcqg7tc2coh" path="res://alien_2.tscn" id="4_k1xru"]
+[ext_resource type="PackedScene" uid="uid://tv715gido8ly" path="res://Aliens/alien_spawner.tscn" id="2_86pne"]
+[ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://Aliens/alien_1.tscn" id="2_eo8mx"]
+[ext_resource type="PackedScene" uid="uid://bujcqg7tc2coh" path="res://Aliens/alien_2.tscn" id="4_k1xru"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_koah4"]
 vertices = PackedVector2Array(150, -150, 150, 262, -150, 262, -150, 150, -262, -150, -262, 150)

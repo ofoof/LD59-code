@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://sxqm2vebq2ka"]
 
 [ext_resource type="Texture2D" uid="uid://jyum3ttm37aw" path="res://arts/rooms/square/RoomTile4OlieElbow-Junction__Black.png" id="1_0r7pr"]
-[ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://alien_1.tscn" id="2_mwh75"]
+[ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://Aliens/alien_1.tscn" id="2_mwh75"]
 [ext_resource type="PackedScene" uid="uid://g4iluaesv63b" path="res://wall.tscn" id="3_20xdu"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_o1wug"]

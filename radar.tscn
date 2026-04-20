@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d2boh05cl5mbi"]
+
+[ext_resource type="Script" uid="uid://bwu2x3n0rog5u" path="res://radar.gd" id="1_0d54j"]
+
+[node name="Radar" type="Node2D" unique_id=1384825680 groups=["Radar"]]
+script = ExtResource("1_0d54j")

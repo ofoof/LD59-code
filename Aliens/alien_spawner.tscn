@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://tv715gido8ly"]
 
-[ext_resource type="Script" uid="uid://dkvnl5iuijvs" path="res://alien_spawner.gd" id="1_7v4ug"]
-[ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://alien_1.tscn" id="2_kp7bh"]
-[ext_resource type="PackedScene" uid="uid://bujcqg7tc2coh" path="res://alien_2.tscn" id="3_t53h2"]
+[ext_resource type="Script" uid="uid://dkvnl5iuijvs" path="res://Aliens/alien_spawner.gd" id="1_7v4ug"]
+[ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://Aliens/alien_1.tscn" id="2_kp7bh"]
+[ext_resource type="PackedScene" uid="uid://bujcqg7tc2coh" path="res://Aliens/alien_2.tscn" id="3_t53h2"]
 
 [node name="AlienSpawner" type="Node2D" unique_id=517353845 groups=["Spawner"]]
 script = ExtResource("1_7v4ug")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b3ovxq1do5apb"]
 
 [ext_resource type="Texture2D" uid="uid://dtycsaqllbc57" path="res://arts/rooms/square/RoomTile4OlieHallway__Black.png" id="1_r8epg"]
-[ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://alien_1.tscn" id="2_1jhdf"]
+[ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://Aliens/alien_1.tscn" id="2_1jhdf"]
 [ext_resource type="PackedScene" uid="uid://g4iluaesv63b" path="res://wall.tscn" id="3_mjuf4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_gfauw"]
