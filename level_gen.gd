@@ -72,6 +72,7 @@ var Elbow3_tag
 var EndRoom_tag
 
 @export var Airlock: PackedScene
+@export var Closed_Door: PackedScene
 
 var Ends = []
 # Called when the node enters the scene tree for the first time.
@@ -92,12 +93,11 @@ func _ready():
 	var player = get_tree().get_first_node_in_group("Player")
 	
 	var placement
-	var placements = [Cross_tag,HallH_tag,HallV_tag]
-	var rand_placement = placements[randi_range(0,2)]
+	var rand_placement = Cross_tag
 	var placement_position = [9,9]
 	grid_avail[placement_position[0]][placement_position[1]]=true
 	grid[placement_position[0]][placement_position[1]]=rand_placement[0]
-	placement = rand_placement[1].pick_random().instantiate()
+	placement = rand_placement[1][0].instantiate()
 	placement.position = Vector2(placement_position[0]*TILE_SIZE,placement_position[1]*TILE_SIZE)
 	get_tree().current_scene.add_child.call_deferred(placement)
 	
@@ -121,12 +121,13 @@ func _ready():
 		for j in range(bounds[1]):
 			if [i,j] in get_used_tiles():
 				force_cap([i,j])			
-	airlock_fill()
 	if get_tree().get_first_node_in_group("Radar"):
 		print("radar active")
 		#load_ends(2)
 	else:
 		load_ends(0)
+	await get_tree().create_timer(2.0).timeout
+	airlock_fill()
 	
 func place_tile_string(start_tile,start_position,string_length):
 	var placement
@@ -324,6 +325,23 @@ func airlock_fill():
 					var new_airlock = Airlock.instantiate()
 					new_airlock.position = Vector2((i+.5)*TILE_SIZE,j*TILE_SIZE)
 					get_tree().current_scene.add_child.call_deferred(new_airlock)
+				elif tile_connection_1 or tile_connection_2:
+					var con1 = grid[i][j]
+					var con2 = grid[i+1][j]
+					if con1:
+						if con1 == "EndRoom":
+							con1=true
+						else:
+							con1=false
+					if con2:
+						if con2 == "EndRoom":
+							con2=true
+						else:
+							con2=false
+					if !(con1==true or con2==true):
+						var new_door = Closed_Door.instantiate()
+						new_door.position = Vector2((i+0.5)*TILE_SIZE,j*TILE_SIZE)
+						get_tree().current_scene.add_child.call_deferred(new_door)
 	for i in range(bounds[0]):
 		for j in range(bounds[1]-1):
 			if grid_avail[i][j]==true and grid_avail[i][j+1]==true:
@@ -339,4 +357,22 @@ func airlock_fill():
 					var new_airlock = Airlock.instantiate()
 					new_airlock.position = Vector2(i*TILE_SIZE,(j+.5)*TILE_SIZE)
 					new_airlock.rotation = PI/2
-					get_tree().current_scene.add_child.call_deferred(new_airlock)			
+					get_tree().current_scene.add_child.call_deferred(new_airlock)
+				elif tile_connection_1 or tile_connection_2:
+					var con1 = grid[i][j]
+					var con2 = grid[i][j+1]
+					if con1:
+						if con1 == "EndRoom":
+							con1=true
+						else:
+							con1=false
+					if con2:
+						if con2 == "EndRoom":
+							con2=true
+						else:
+							con2=false
+					if !(con1==true or con2==true):
+						var new_door = Closed_Door.instantiate()
+						new_door.position = Vector2(i*TILE_SIZE,(j+.5)*TILE_SIZE)
+						new_door.rotation = PI/2
+						get_tree().current_scene.add_child.call_deferred(new_door)
