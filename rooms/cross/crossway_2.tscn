@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dkmm4ta2hyury"]
+
+[ext_resource type="Texture2D" uid="uid://qpxx8ggeir8v" path="res://arts/rooms/square/RoomTile4OlieBlack.png" id="1_sfhi8"]
+[ext_resource type="PackedScene" uid="uid://g4iluaesv63b" path="res://wall.tscn" id="2_axjt8"]
+[ext_resource type="PackedScene" uid="uid://tv715gido8ly" path="res://alien_spawner.tscn" id="3_puq5g"]
+[ext_resource type="PackedScene" uid="uid://bujcqg7tc2coh" path="res://alien_2.tscn" id="4_ykkbt"]
+[ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://alien_1.tscn" id="5_8fqyf"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_yveig"]
+vertices = PackedVector2Array(259, -137, 259, 163, 147, 163, 99.203125, 155.20313, 99.203125, 52.796875, 147, -137, 147, -249, -3.203125, 52.796875, -51.28125, 20.445313, -153, -137, -153, -249, -101.44531, 109.71875, -3.203125, 155.20313, 147, 275, -153, 275, -153, 163, -190.71875, 59.554688, -265, 163, -140.55469, -29.71875, -265, -137)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 5, 4, 7, 8, 9, 10), PackedInt32Array(11, 8, 7, 12), PackedInt32Array(12, 3, 2, 13, 14, 15), PackedInt32Array(11, 12, 15), PackedInt32Array(16, 11, 15, 17), PackedInt32Array(18, 16, 17, 19, 9), PackedInt32Array(9, 8, 18)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-163, -259, 157, -259, 157, -147, 269, -147, 269, 173, 157, 173, 157, 285, -163, 285, -163, 173, -275, 173, -275, -147, -163, -147)])
+
+[node name="crossway_2" type="Node2D" unique_id=627939477]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=449415206]
+z_index = -5
+rotation = 0.0012169338
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_sfhi8")
+offset = Vector2(1, 1)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=335498273]
+position = Vector2(3, -13)
+navigation_polygon = SubResource("NavigationPolygon_yveig")
+
+[node name="Box1" parent="NavigationRegion2D" unique_id=1088609404 instance=ExtResource("2_axjt8")]
+position = Vector2(47.999985, 103.999985)
+scale = Vector2(0.4, 0.4)
+
+[node name="Box2" parent="NavigationRegion2D" unique_id=684543264 instance=ExtResource("2_axjt8")]
+position = Vector2(-120.999985, 40.000004)
+rotation = 0.5119738
+scale = Vector2(0.4, 0.4)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1691454651]
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=166078714]
+position = Vector2(0, -459)
+polygon = PackedVector2Array(-256, 203, -256, 283, -176, 283, -176, 203)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1296863507]
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3" unique_id=1839065291]
+position = Vector2(502, -459)
+polygon = PackedVector2Array(-326, 203, -326, 283, -246, 283, -246, 203)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=2056417915]
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=1184711674]
+position = Vector2(-3, 215)
+polygon = PackedVector2Array(-253, -39, -253, 41, -173, 41, -173, -39)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1926053969]
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D4" unique_id=39666046]
+position = Vector2(503, 221)
+polygon = PackedVector2Array(-327, -45, -327, 35, -247, 35, -247, -45)
+
+[node name="AlienSpawner" parent="." unique_id=517353845 instance=ExtResource("3_puq5g")]
+position = Vector2(16.000004, -80)
+aliens = Array[PackedScene]([ExtResource("4_ykkbt")])
+chance = 88
+
+[node name="AlienSpawner2" parent="." unique_id=672216728 instance=ExtResource("3_puq5g")]
+position = Vector2(96, 58.66667)
+aliens = Array[PackedScene]([ExtResource("5_8fqyf"), ExtResource("5_8fqyf"), ExtResource("5_8fqyf"), ExtResource("4_ykkbt")])
+chance = 21

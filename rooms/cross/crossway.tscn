@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bujcqg7tc2coh" path="res://alien_2.tscn" id="5_pmko2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tqd7v"]
-vertices = PackedVector2Array(236.09375, -80.71875, 152.89844, -137, 259, -137, 259, 163, 178.71875, 4.09375, 147, 163, 43.09375, 28.28125, 93.90625, -53.28125, 147, -137, 150.53906, -137, -14.28125, 113.09375, -41.71875, -29.09375, -127.796875, -142.20313, -153, -142.20313, -153, -248.65625, 147, -238.67188, -127.796875, -39.796875, -55.828125, -8.2265625, -137.50781, 21.15625, -230.20313, -39.796875, 147, 275, -153, 275, -153, 163, -40.765625, 95.171875, -102.84375, 117.50781, -265, 163, -265, -137, -230.20313, -137)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(0, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 7, 4, 5), PackedInt32Array(8, 9, 7), PackedInt32Array(10, 6, 5), PackedInt32Array(7, 6, 11, 12), PackedInt32Array(13, 14, 15, 12), PackedInt32Array(12, 15, 8, 7), PackedInt32Array(16, 12, 11, 17), PackedInt32Array(16, 17, 18, 19), PackedInt32Array(10, 5, 20, 21, 22), PackedInt32Array(23, 10, 22, 24), PackedInt32Array(25, 26, 27, 19), PackedInt32Array(22, 25, 19, 18, 24)])
+vertices = PackedVector2Array(236.09375, -80.71875, 152.89844, -137, 259, -137, 259, 163, 178.71875, 4.09375, 147, 163, 43.09375, 28.28125, 93.90625, -53.28125, 147, -137, 150.53906, -137, -14.28125, 113.09375, -41.71875, -29.09375, -127.796875, -142.20313, 147, 275, -153, 275, -153, 163, -40.765625, 95.171875, -102.84375, 117.50781, -265, 163, -265, -137, -230.20313, -137, -230.20313, -39.796875, -137.50781, 21.15625, -55.828125, -8.2265625, -127.796875, -39.796875, -153, -142.20313, -153, -249, 147, -249)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(0, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 7, 4, 5), PackedInt32Array(8, 9, 7), PackedInt32Array(10, 6, 5), PackedInt32Array(7, 6, 11, 12), PackedInt32Array(10, 5, 13, 14, 15), PackedInt32Array(16, 10, 15, 17), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(17, 15, 18, 21, 22), PackedInt32Array(23, 22, 21, 24, 11), PackedInt32Array(12, 25, 26, 27), PackedInt32Array(12, 27, 8, 7), PackedInt32Array(24, 12, 11)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-163, -259, 157, -259, 157, -147, 269, -147, 269, 173, 157, 173, 157, 285, -163, 285, -163, 173, -275, 173, -275, -147, -163, -147)])
 
 [node name="Crossway" type="Node2D" unique_id=1689067306]
@@ -26,21 +26,21 @@ offset = Vector2(1, 1)
 position = Vector2(3, -13)
 navigation_polygon = SubResource("NavigationPolygon_tqd7v")
 
-[node name="Wall" parent="NavigationRegion2D" unique_id=1088609404 instance=ExtResource("3_6nuss")]
+[node name="Box1" parent="NavigationRegion2D" unique_id=1088609404 instance=ExtResource("3_6nuss")]
 position = Vector2(-179, -91)
 scale = Vector2(0.4, 0.4)
 
-[node name="Wall2" parent="NavigationRegion2D" unique_id=1974585127 instance=ExtResource("3_6nuss")]
+[node name="Box2" parent="NavigationRegion2D" unique_id=1974585127 instance=ExtResource("3_6nuss")]
 position = Vector2(-72, 52)
 rotation = -0.34535956
 scale = Vector2(0.4, 0.4)
 
-[node name="Wall3" parent="NavigationRegion2D" unique_id=2075166548 instance=ExtResource("3_6nuss")]
+[node name="Box3" parent="NavigationRegion2D" unique_id=2075166548 instance=ExtResource("3_6nuss")]
 position = Vector2(-28, 42.000004)
 rotation = 0.5947383
 scale = Vector2(0.4, 0.4)
 
-[node name="Wall4" parent="NavigationRegion2D" unique_id=2130463046 instance=ExtResource("3_6nuss")]
+[node name="Box4" parent="NavigationRegion2D" unique_id=2130463046 instance=ExtResource("3_6nuss")]
 position = Vector2(165, -67.00001)
 rotation = 0.5947383
 scale = Vector2(0.4, 0.4)
