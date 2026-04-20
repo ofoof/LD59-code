@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bxj4ocl546abx"]
 
-[ext_resource type="Script" uid="uid://v5f8xmalpbbc" path="res://start_room.gd" id="1_herjy"]
+[ext_resource type="Script" path="res://start_room.gd" id="1_herjy"]
 [ext_resource type="Texture2D" uid="uid://qpxx8ggeir8v" path="res://arts/rooms/square/RoomTile4OlieBlack.png" id="2_xc0pk"]
 [ext_resource type="PackedScene" uid="uid://g4iluaesv63b" path="res://wall.tscn" id="3_l0hhy"]
 [ext_resource type="Texture2D" uid="uid://brtiyh8b5m0va" path="res://arts/pointlight.png" id="4_sds2w"]
@@ -58,10 +58,10 @@ texture = ExtResource("4_sds2w")
 
 [node name="Text" type="Label" parent="TransportArea" unique_id=1659587715]
 z_index = 3
-offset_left = -668.9672
-offset_top = -231.90865
-offset_right = 714.0328
-offset_bottom = 245.09135
+offset_left = -642.2085
+offset_top = -285.42603
+offset_right = 740.7915
+offset_bottom = 431.57397
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 174
 text = "Stand here to go
