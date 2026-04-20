@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://nopkxkauxgpm"]
 
 [ext_resource type="Texture2D" uid="uid://qpxx8ggeir8v" path="res://arts/rooms/square/RoomTile4OlieBlack.png" id="1_c3tq6"]
-[ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://alien_1.tscn" id="2_pmko2"]
+[ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://Aliens/alien_1.tscn" id="2_pmko2"]
 [ext_resource type="PackedScene" uid="uid://g4iluaesv63b" path="res://wall.tscn" id="3_6nuss"]
 [ext_resource type="Texture2D" uid="uid://brtiyh8b5m0va" path="res://arts/pointlight.png" id="3_336ir"]
-[ext_resource type="PackedScene" uid="uid://tv715gido8ly" path="res://alien_spawner.tscn" id="4_6nuss"]
+[ext_resource type="PackedScene" uid="uid://tv715gido8ly" path="res://Aliens/alien_spawner.tscn" id="4_6nuss"]
 [ext_resource type="Texture2D" uid="uid://bwcmi3ihsitvi" path="res://arts/flahslight2.png" id="4_qygy7"]
-[ext_resource type="PackedScene" uid="uid://bujcqg7tc2coh" path="res://alien_2.tscn" id="5_pmko2"]
+[ext_resource type="PackedScene" uid="uid://bujcqg7tc2coh" path="res://Aliens/alien_2.tscn" id="5_pmko2"]
+
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tqd7v"]
 vertices = PackedVector2Array(236.09375, -80.71875, 152.89844, -137, 259, -137, 259, 163, 178.71875, 4.09375, 147, 163, 43.09375, 28.28125, 93.90625, -53.28125, 147, -137, 150.53906, -137, -14.28125, 113.09375, -41.71875, -29.09375, -127.796875, -142.20313, 147, 275, -153, 275, -153, 163, -40.765625, 95.171875, -102.84375, 117.50781, -265, 163, -265, -137, -230.20313, -137, -230.20313, -39.796875, -137.50781, 21.15625, -55.828125, -8.2265625, -127.796875, -39.796875, -153, -142.20313, -153, -249, 147, -249)

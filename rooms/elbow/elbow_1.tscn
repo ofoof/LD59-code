@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://slh7sk1t8vlm"]
 
 [ext_resource type="Texture2D" uid="uid://jyum3ttm37aw" path="res://arts/rooms/square/RoomTile4OlieElbow-Junction__Black.png" id="1_tdh3h"]
-[ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://alien_1.tscn" id="2_8chjs"]
-[ext_resource type="PackedScene" uid="uid://tv715gido8ly" path="res://alien_spawner.tscn" id="3_7ult4"]
+[ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://Aliens/alien_1.tscn" id="2_8chjs"]
+[ext_resource type="PackedScene" uid="uid://tv715gido8ly" path="res://Aliens/alien_spawner.tscn" id="3_7ult4"]
 [ext_resource type="PackedScene" uid="uid://g4iluaesv63b" path="res://wall.tscn" id="3_p2et7"]
+
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_o1wug"]
 vertices = PackedVector2Array(60.867188, 24.851563, 158, -150, 158, 262, -10.8515625, 130.86719, -142, 262, -142, 150, -116.86719, 59.148438, -45.148438, -46.867188, -254, -150, -254, 150)

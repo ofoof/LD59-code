@@ -9,15 +9,18 @@
 [ext_resource type="PackedScene" uid="uid://c34ae52ncoop" path="res://Player/character_body_2d.tscn" id="4_rroed"]
 [ext_resource type="PackedScene" uid="uid://dkmm4ta2hyury" path="res://rooms/cross/crossway_2.tscn" id="5_32kkc"]
 [ext_resource type="PackedScene" uid="uid://slh7sk1t8vlm" path="res://rooms/elbow/elbow_1.tscn" id="5_jhiib"]
-[ext_resource type="PackedScene" uid="uid://dwugbfquqe3oj" path="res://airlock.tscn" id="5_lx3gp"]
+[ext_resource type="PackedScene" uid="uid://dwugbfquqe3oj" path="res://rooms/airlock.tscn" id="5_lx3gp"]
 [ext_resource type="PackedScene" uid="uid://dwkfjte7o4qyt" path="res://rooms/t/tbend.tscn" id="5_vb3xr"]
 [ext_resource type="PackedScene" uid="uid://dm7x2cxqqgviv" path="res://rooms/elbow/elbow_2.tscn" id="6_0g0uc"]
 [ext_resource type="PackedScene" uid="uid://cncvgp5l0txky" path="res://rooms/t/tbend_1.tscn" id="6_32kkc"]
 [ext_resource type="PackedScene" uid="uid://sxqm2vebq2ka" path="res://rooms/elbow/elbow_3.tscn" id="7_54hn3"]
 [ext_resource type="PackedScene" uid="uid://5enln25feds6" path="res://rooms/t/tbend_2.tscn" id="7_hxonm"]
 [ext_resource type="PackedScene" uid="uid://bxk26gttmmcdh" path="res://rooms/t/tbend_3.tscn" id="8_17oog"]
+[ext_resource type="PackedScene" uid="uid://duuo2c6rncw7o" path="res://rooms/Objectives/objective_1.tscn" id="14_hxonm"]
+[ext_resource type="PackedScene" uid="uid://bk8sc5lj2ajsc" path="res://rooms/door.tscn" id="16_17oog"]
+[ext_resource type="PackedScene" uid="uid://d2boh05cl5mbi" path="res://radar.tscn" id="16_32kkc"]
 
-[node name="Level Gen" type="Node2D" unique_id=1346862723]
+[node name="Level Gen" type="Node2D" unique_id=1346862723 groups=["Generator"]]
 script = ExtResource("1_s4g8x")
 HallH = Array[PackedScene]([ExtResource("2_rroed")])
 HallV = Array[PackedScene]([ExtResource("3_0g0uc")])
@@ -31,6 +34,10 @@ Elbow1 = Array[PackedScene]([ExtResource("5_jhiib")])
 Elbow2 = Array[PackedScene]([ExtResource("6_0g0uc")])
 Elbow3 = Array[PackedScene]([ExtResource("7_54hn3")])
 EndRoom = Array[PackedScene]([ExtResource("4_go70u")])
+ObjectiveRooms = Array[PackedScene]([ExtResource("14_hxonm")])
 Airlock = ExtResource("5_lx3gp")
+Closed_Door = ExtResource("16_17oog")
 
 [node name="Player" parent="." unique_id=612887957 instance=ExtResource("4_rroed")]
+
+[node name="Radar" parent="." unique_id=1384825680 instance=ExtResource("16_32kkc")]
