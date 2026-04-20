@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var DETECTION_RANGE = 400
 @export var split_on_death = false
 @export var rotate_to_player = true
+@export var perma_lock = false
 var movement_target_position: Vector2
 var health
 var movement_speed
@@ -40,7 +41,8 @@ func _process(delta):
 			goto = movement_target_position
 			set_movement_target(goto)
 		else:
-			set_movement_target((goto+global_position)/2)
+			if !perma_lock:
+				set_movement_target((goto+global_position)/2)
 		if rotate_to_player:
 			if player.global_position.x < global_position.x:
 				$Sprite2D.flip_v=true

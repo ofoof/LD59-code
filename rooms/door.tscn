@@ -6,7 +6,7 @@
 size = Vector2(250.66667, 1408)
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1516468460]
-scale = Vector2(0.57, 0.35)
+scale = Vector2(0.5, 0.376)
 collision_layer = 4
 collision_mask = 15
 
@@ -18,3 +18,4 @@ shape = SubResource("RectangleShape2D_ba8gm")
 position = Vector2(-3, 0)
 rotation = 1.5707964
 texture = ExtResource("1_ba8gm")
+offset = Vector2(0, -1)

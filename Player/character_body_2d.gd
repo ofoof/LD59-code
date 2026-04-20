@@ -1,18 +1,23 @@
 extends CharacterBody2D
 
 
-const ACCEL = 1000.0
-const MAX_SPEED = 300.0
-const FRICTION = 1000.0
+const ACCEL = 750.0
+const MAX_SPEED = 250.0
+const FRICTION = 900.0
 const TURN_SPEED = 5.0
-var health = 5.0
-var MAX_HEALTH = 5.0
+@export var MAX_HEALTH = 5.0
+var health = MAX_HEALTH
 var zoomed = false
+@export var max_bullets = 8
+@export var bullet_damage = 4
+var bullets = max_bullets
 @export var bullet: PackedScene
 var GUI
+var reloading = false
 
 func _ready():
 	GUI = get_tree().get_first_node_in_group("GUI")
+	update_bullets()
 
 func _physics_process(delta):
 	var direction = Input.get_vector("Left", "Right","Up", "Down")
@@ -38,22 +43,40 @@ func _physics_process(delta):
 	if Input.is_action_pressed("Interact1"):
 		shoot()
 	if Input.is_action_pressed("Interact2"):
-		if $ZoomTimer.time_left==0:
-			if zoomed:
-				zoomed = false
-				$Camera2D.zoom = Vector2(1,1)
-			else:
-				zoomed = true
-				$Camera2D.zoom = Vector2(0.05,0.05)
-			$ZoomTimer.start()
+		reload()
+		#if $ZoomTimer.time_left==0:
+			#if zoomed:
+				#zoomed = false
+				#$Camera2D.zoom = Vector2(1,1)
+			#else:
+				#zoomed = true
+				#$Camera2D.zoom = Vector2(0.05,0.05)
+			#$ZoomTimer.start()
 
 func shoot():
-	if $CooldownTimer.time_left<=0:
-		var newBullet = bullet.instantiate()
-		newBullet.position = position
-		newBullet.rotation = rotation
-		get_tree().current_scene.add_child(newBullet)
-		$CooldownTimer.start()
+	if bullets>0:
+		if $CooldownTimer.time_left<=0:
+			var newBullet = bullet.instantiate()
+			newBullet.position = global_position
+			newBullet.rotation = rotation
+			newBullet.damage = bullet_damage
+			get_tree().current_scene.add_child(newBullet)
+			$CooldownTimer.start()
+			bullets-=1
+			update_bullets()
+	else:
+		reload()
+func reload():
+	if !reloading:
+		bullets = 0
+		update_bullets()
+		reloading = true
+		print("reloading")
+		await get_tree().create_timer(2.0).timeout
+		bullets = max_bullets
+		update_bullets()
+		reloading = false
+		print("reloaded")
 func take_damage(damage):
 	if $HitCooldown.time_left<=0:
 		health-=damage
@@ -63,3 +86,5 @@ func take_damage(damage):
 			if GUI.get_child(0):
 				GUI.get_child(0).text=str(roundi((health/MAX_HEALTH)*100))+"%"
 		$HitCooldown.start()
+func update_bullets():
+	$GUI/Ammo.text = str(bullets)+"/"+str(max_bullets)
