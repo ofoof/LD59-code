@@ -5,8 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b3ovxq1do5apb" path="res://rooms/halls/hall_v.tscn" id="3_0g0uc"]
 [ext_resource type="PackedScene" uid="uid://nopkxkauxgpm" path="res://rooms/cross/crossway.tscn" id="3_go70u"]
 [ext_resource type="PackedScene" uid="uid://dolped2kr60ah" path="res://rooms/elbow/elbow.tscn" id="4_30a2p"]
-[ext_resource type="PackedScene" uid="uid://bjhfi04k18p15" path="res://rooms/end/end_room.tscn" id="4_go70u"]
-[ext_resource type="PackedScene" uid="uid://dkmm4ta2hyury" path="res://rooms/cross/crossway_2.tscn" id="5_32kkc"]
+[ext_resource type="PackedScene" uid="uid://bjhfi04k18p15" path="res://end_room.tscn" id="4_go70u"]
 [ext_resource type="PackedScene" uid="uid://slh7sk1t8vlm" path="res://rooms/elbow/elbow_1.tscn" id="5_jhiib"]
 [ext_resource type="PackedScene" uid="uid://dwugbfquqe3oj" path="res://rooms/airlock.tscn" id="5_lx3gp"]
 [ext_resource type="PackedScene" uid="uid://dwkfjte7o4qyt" path="res://rooms/t/tbend.tscn" id="5_vb3xr"]
@@ -17,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bxk26gttmmcdh" path="res://rooms/t/tbend_3.tscn" id="8_17oog"]
 [ext_resource type="PackedScene" uid="uid://duuo2c6rncw7o" path="res://rooms/Objectives/objective_1.tscn" id="14_hxonm"]
 [ext_resource type="PackedScene" uid="uid://bk8sc5lj2ajsc" path="res://rooms/door.tscn" id="16_17oog"]
+[ext_resource type="PackedScene" uid="uid://bxj4ocl546abx" path="res://rooms/ start_room.tscn" id="17_f7tw1"]
 
 [node name="Level Gen" type="Node2D" unique_id=1346862723 groups=["Generator"]]
 script = ExtResource("1_s4g8x")
@@ -35,3 +35,4 @@ EndRoom = Array[PackedScene]([ExtResource("4_go70u")])
 ObjectiveRooms = Array[PackedScene]([ExtResource("14_hxonm")])
 Airlock = ExtResource("5_lx3gp")
 Closed_Door = ExtResource("16_17oog")
+Start_Room = ExtResource("17_f7tw1")

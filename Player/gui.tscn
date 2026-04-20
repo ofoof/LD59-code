@@ -9,3 +9,11 @@ offset_right = 246.0
 offset_bottom = 595.0
 theme_override_font_sizes/font_size = 68
 text = "100%"
+
+[node name="Ammo" type="Label" parent="." unique_id=1552396922]
+offset_left = 75.0
+offset_top = 580.0
+offset_right = 250.0
+offset_bottom = 673.0
+theme_override_font_sizes/font_size = 40
+text = "6/6"
