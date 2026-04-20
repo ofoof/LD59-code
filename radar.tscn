@@ -1,6 +1,42 @@
 [gd_scene format=3 uid="uid://d2boh05cl5mbi"]
 
 [ext_resource type="Script" uid="uid://bwu2x3n0rog5u" path="res://radar.gd" id="1_0d54j"]
+[ext_resource type="PackedScene" uid="uid://cx817t8xrjpxt" path="res://point_tracker.tscn" id="2_klbcc"]
+[ext_resource type="Texture2D" uid="uid://cb6x37uwat7cs" path="res://arts/radar.png" id="3_rlo7y"]
+[ext_resource type="Texture2D" uid="uid://bc11kaibpdxgv" path="res://arts/frame-1.png" id="4_7sbcd"]
 
 [node name="Radar" type="Node2D" unique_id=1384825680 groups=["Radar"]]
 script = ExtResource("1_0d54j")
+tracker = ExtResource("2_klbcc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1991207708]
+
+[node name="Background" type="Sprite2D" parent="CanvasLayer" unique_id=418430644]
+position = Vector2(981, 455.99997)
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("3_rlo7y")
+offset = Vector2(60, -95)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Background" unique_id=1152560097]
+z_index = 2
+rotation = 3.1415927
+scale = Vector2(0.236, 0.236)
+texture = ExtResource("4_7sbcd")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=533873837]
+offset_left = 772.0
+offset_top = 582.0
+offset_right = 1191.0
+offset_bottom = 637.0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=1216110314]
+offset_left = 780.0
+offset_top = 565.0
+offset_right = 1199.0
+offset_bottom = 620.0
+theme_override_font_sizes/font_size = 19
+text = "Beacons Recovered:"
+horizontal_alignment = 1

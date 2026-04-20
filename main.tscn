@@ -1,110 +1,31 @@
 [gd_scene format=3 uid="uid://bt481xxyssb4d"]
 
-[ext_resource type="Texture2D" uid="uid://bxlt7q8jp7kno" path="res://arts/rooms/other/Untitled137_20260417210549.png" id="4_7mycd"]
-[ext_resource type="Texture2D" uid="uid://c7ddnp80kj4ii" path="res://arts/rooms/other/Untitled137_20260417210553.png" id="5_272bh"]
-[ext_resource type="Texture2D" uid="uid://cvlf7b427bm05" path="res://arts/rooms/other/Untitled137_20260417210557.png" id="6_5vw27"]
+[ext_resource type="Script" uid="uid://bi6nxpikwmteg" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="Texture2D" uid="uid://brtiyh8b5m0va" path="res://arts/pointlight.png" id="4_272bh"]
 [ext_resource type="Texture2D" uid="uid://dt6t0v42qohqg" path="res://arts/space2.png" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://c34ae52ncoop" path="res://Player/character_body_2d.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://li6j4amvfp3y" path="res://level_gen.tscn" id="7_272bh"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_h2yge"]
-vertices = PackedVector2Array(1591.25, 5.9609375, 1604.7266, 509, 670.6172, 509, 213, 487, -853.96094, -4.0390625, -857, 487, -1282.9688, -45.539063, -1438.8906, -1556.7891, 799.6406, -1515.1797, 782.35156, -1030.1563, -858.03906, -1058.1719, -1421.5938, 546.5781, -2230.4688, 500.57813, -2203.4922, 0.53125, 190, 795, 766.64844, 1249.2734, -1453.5469, 1303.7266, -885, 763)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(4, 3, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(6, 7, 10, 4), PackedInt32Array(11, 12, 13, 6, 5), PackedInt32Array(14, 3, 2, 15), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(17, 16, 11, 5)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-2241, 510, -2213, -9, -1294, -55, -1450, -1567, 810, -1525, 792, -1020, -848, -1048, -844, -14, 1601, -4, 1615, 519, 682, 519, 778, 1259, -1464, 1314, -1432, 556)])
-
 [node name="Main" type="Node2D" unique_id=989697719]
-modulate = Color(0.003921569, 0.003921569, 0.003921569, 1)
-
-[node name="Walls" type="Node2D" parent="." unique_id=1024109500]
-visible = false
-
-[node name="Background" type="Node2D" parent="Walls" unique_id=1087283153]
-scale = Vector2(1.545, 1.545)
-
-[node name="Untitled13720260417210549" type="Sprite2D" parent="Walls/Background" unique_id=405997140]
-position = Vector2(303.00003, 167.99988)
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("4_7mycd")
-
-[node name="Untitled13720260417210552" type="Sprite2D" parent="Walls/Background" unique_id=1289625332]
-position = Vector2(-710, -850.00006)
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("4_7mycd")
-
-[node name="Untitled13720260417210551" type="Sprite2D" parent="Walls/Background" unique_id=1607624226]
-position = Vector2(282, 662)
-rotation = -3.1415925
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("4_7mycd")
-
-[node name="Untitled13720260417210550" type="Sprite2D" parent="Walls/Background" unique_id=276594343]
-position = Vector2(-731, 666)
-rotation = -3.1415925
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("4_7mycd")
-
-[node name="Untitled13720260417210553" type="Sprite2D" parent="Walls/Background" unique_id=1366388409]
-position = Vector2(-190, 154)
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("5_272bh")
-
-[node name="Untitled13720260417210556" type="Sprite2D" parent="Walls/Background" unique_id=808270816]
-position = Vector2(-1201, 175)
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("5_272bh")
-
-[node name="Untitled13720260417210558" type="Sprite2D" parent="Walls/Background" unique_id=231839180]
-position = Vector2(-689, -340)
-rotation = -1.5707964
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("5_272bh")
-
-[node name="Untitled13720260417210560" type="Sprite2D" parent="Walls/Background" unique_id=420091666]
-position = Vector2(283, -822)
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("5_272bh")
-
-[node name="Untitled13720260417210555" type="Sprite2D" parent="Walls/Background" unique_id=513179486]
-position = Vector2(-220, 692)
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("5_272bh")
-
-[node name="Untitled13720260417210554" type="Sprite2D" parent="Walls/Background" unique_id=686092827]
-position = Vector2(809, 173)
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("5_272bh")
-
-[node name="Untitled13720260417210557" type="Sprite2D" parent="Walls/Background" unique_id=517923076]
-position = Vector2(-702, 157)
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("6_5vw27")
-
-[node name="Untitled13720260417210559" type="Sprite2D" parent="Walls/Background" unique_id=101895987]
-position = Vector2(-212, -842.99994)
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("6_5vw27")
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1062340086]
-visible = false
-navigation_polygon = SubResource("NavigationPolygon_h2yge")
-navigation_layers = 2
-
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D" unique_id=910951945]
-vertices = PackedVector2Array(-857, 487, 213, 487, 190, 795, -885, 763)
-affect_navigation_mesh = true
-carve_navigation_mesh = true
-avoidance_enabled = false
+modulate = Color(0.001361685, 0.001361685, 0.001361685, 1)
+script = ExtResource("1_lquwl")
+Generator = ExtResource("7_272bh")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1788374865]
 editor_only = true
 energy = 102.5
-range_item_cull_mask = 2
+range_item_cull_mask = 4
 
-[node name="Level Gen" parent="." unique_id=1346862723 instance=ExtResource("7_272bh")]
-z_index = 3
+[node name="PointLight2D" type="PointLight2D" parent="DirectionalLight2D" unique_id=147661647]
+position = Vector2(3802.0002, 1978.9999)
+scale = Vector2(5.471134, 3.7726808)
+texture = ExtResource("4_272bh")
 
 [node name="Backgrounds" type="Node2D" parent="." unique_id=631311334]
+light_mask = 4
 
 [node name="Parallax2D" type="Parallax2D" parent="Backgrounds" unique_id=1171054318]
+light_mask = 4
 scale = Vector2(0.56, 0.56)
 scroll_scale = Vector2(0.325, 0.325)
 
@@ -122,12 +43,13 @@ energy = 765.8
 range_item_cull_mask = 2
 texture = ExtResource("6_7mycd")
 
-[node name="Parallax2D5" type="Parallax2D" parent="Backgrounds" unique_id=1185060302]
+[node name="Parallax2D16" type="Parallax2D" parent="Backgrounds" unique_id=753268189]
+light_mask = 4
 scale = Vector2(0.56, 0.56)
 scroll_scale = Vector2(0.325, 0.325)
-scroll_offset = Vector2(5129, -9)
+scroll_offset = Vector2(0, 6691)
 
-[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D5" unique_id=397238179]
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D16" unique_id=1913138646]
 light_mask = 2
 visibility_layer = 2
 z_index = -10
@@ -135,18 +57,19 @@ position = Vector2(4, -3)
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("6_7mycd")
 
-[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D5" unique_id=1124936097]
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D16" unique_id=977478970]
 scale = Vector2(2.25, 2.25)
 energy = 765.8
 range_item_cull_mask = 2
 texture = ExtResource("6_7mycd")
 
-[node name="Parallax2D6" type="Parallax2D" parent="Backgrounds" unique_id=502368457]
+[node name="Parallax2D17" type="Parallax2D" parent="Backgrounds" unique_id=1316485739]
+light_mask = 4
 scale = Vector2(0.56, 0.56)
 scroll_scale = Vector2(0.325, 0.325)
-scroll_offset = Vector2(5096, 2392)
+scroll_offset = Vector2(0, 7578)
 
-[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D6" unique_id=855363641]
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D17" unique_id=1203519589]
 light_mask = 2
 visibility_layer = 2
 z_index = -10
@@ -154,18 +77,19 @@ position = Vector2(4, -3)
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("6_7mycd")
 
-[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D6" unique_id=1441482903]
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D17" unique_id=1486832848]
 scale = Vector2(2.25, 2.25)
 energy = 765.8
 range_item_cull_mask = 2
 texture = ExtResource("6_7mycd")
 
-[node name="Parallax2D7" type="Parallax2D" parent="Backgrounds" unique_id=1046623790]
+[node name="Parallax2D18" type="Parallax2D" parent="Backgrounds" unique_id=257819756]
+light_mask = 4
 scale = Vector2(0.56, 0.56)
 scroll_scale = Vector2(0.325, 0.325)
-scroll_offset = Vector2(57, 4907)
+scroll_offset = Vector2(2491, 7578)
 
-[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D7" unique_id=1801965452]
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D18" unique_id=74286674]
 light_mask = 2
 visibility_layer = 2
 z_index = -10
@@ -173,18 +97,19 @@ position = Vector2(4, -3)
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("6_7mycd")
 
-[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D7" unique_id=267052151]
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D18" unique_id=1661956519]
 scale = Vector2(2.25, 2.25)
 energy = 765.8
 range_item_cull_mask = 2
 texture = ExtResource("6_7mycd")
 
-[node name="Parallax2D8" type="Parallax2D" parent="Backgrounds" unique_id=372975140]
+[node name="Parallax2D19" type="Parallax2D" parent="Backgrounds" unique_id=639636326]
+light_mask = 4
 scale = Vector2(0.56, 0.56)
 scroll_scale = Vector2(0.325, 0.325)
-scroll_offset = Vector2(2320, 4817)
+scroll_offset = Vector2(5025, 7578)
 
-[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D8" unique_id=295461568]
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D19" unique_id=1626433243]
 light_mask = 2
 visibility_layer = 2
 z_index = -10
@@ -192,18 +117,19 @@ position = Vector2(4, -3)
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("6_7mycd")
 
-[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D8" unique_id=1813780599]
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D19" unique_id=658058422]
 scale = Vector2(2.25, 2.25)
 energy = 765.8
 range_item_cull_mask = 2
 texture = ExtResource("6_7mycd")
 
-[node name="Parallax2D9" type="Parallax2D" parent="Backgrounds" unique_id=1021719986]
+[node name="Parallax2D20" type="Parallax2D" parent="Backgrounds" unique_id=1734538983]
+light_mask = 4
 scale = Vector2(0.56, 0.56)
 scroll_scale = Vector2(0.325, 0.325)
-scroll_offset = Vector2(4247, 4851)
+scroll_offset = Vector2(7580, 7578)
 
-[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D9" unique_id=514690415]
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D20" unique_id=1495975472]
 light_mask = 2
 visibility_layer = 2
 z_index = -10
@@ -211,19 +137,19 @@ position = Vector2(4, -3)
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("6_7mycd")
 
-[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D9" unique_id=1828594994]
-position = Vector2(-76.785706, 541.07227)
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D20" unique_id=1089555068]
 scale = Vector2(2.25, 2.25)
 energy = 765.8
 range_item_cull_mask = 2
 texture = ExtResource("6_7mycd")
 
-[node name="Parallax2D10" type="Parallax2D" parent="Backgrounds" unique_id=427210491]
+[node name="Parallax2D21" type="Parallax2D" parent="Backgrounds" unique_id=347477453]
+light_mask = 4
 scale = Vector2(0.56, 0.56)
 scroll_scale = Vector2(0.325, 0.325)
-scroll_offset = Vector2(6049, 4865)
+scroll_offset = Vector2(10134, 7578)
 
-[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D10" unique_id=123328239]
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D21" unique_id=46722347]
 light_mask = 2
 visibility_layer = 2
 z_index = -10
@@ -231,18 +157,19 @@ position = Vector2(4, -3)
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("6_7mycd")
 
-[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D10" unique_id=1763068334]
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D21" unique_id=2084355075]
 scale = Vector2(2.25, 2.25)
 energy = 765.8
 range_item_cull_mask = 2
 texture = ExtResource("6_7mycd")
 
-[node name="Parallax2D11" type="Parallax2D" parent="Backgrounds" unique_id=1606957976]
+[node name="Parallax2D11" type="Parallax2D" parent="Backgrounds" unique_id=1300803003]
+light_mask = 4
 scale = Vector2(0.56, 0.56)
 scroll_scale = Vector2(0.325, 0.325)
-scroll_offset = Vector2(7530.9995, 3033)
+scroll_offset = Vector2(0, 5047)
 
-[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D11" unique_id=2064801747]
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D11" unique_id=269933980]
 light_mask = 2
 visibility_layer = 2
 z_index = -10
@@ -250,18 +177,19 @@ position = Vector2(4, -3)
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("6_7mycd")
 
-[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D11" unique_id=924152347]
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D11" unique_id=1508053005]
 scale = Vector2(2.25, 2.25)
 energy = 765.8
 range_item_cull_mask = 2
 texture = ExtResource("6_7mycd")
 
-[node name="Parallax2D12" type="Parallax2D" parent="Backgrounds" unique_id=218699664]
+[node name="Parallax2D12" type="Parallax2D" parent="Backgrounds" unique_id=1790194069]
+light_mask = 4
 scale = Vector2(0.56, 0.56)
 scroll_scale = Vector2(0.325, 0.325)
-scroll_offset = Vector2(7608, 485)
+scroll_offset = Vector2(2553, 5047)
 
-[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D12" unique_id=1787393336]
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D12" unique_id=861902229]
 light_mask = 2
 visibility_layer = 2
 z_index = -10
@@ -269,18 +197,19 @@ position = Vector2(4, -3)
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("6_7mycd")
 
-[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D12" unique_id=1873445068]
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D12" unique_id=1262259239]
 scale = Vector2(2.25, 2.25)
 energy = 765.8
 range_item_cull_mask = 2
 texture = ExtResource("6_7mycd")
 
-[node name="Parallax2D13" type="Parallax2D" parent="Backgrounds" unique_id=1180377088]
+[node name="Parallax2D13" type="Parallax2D" parent="Backgrounds" unique_id=1538294804]
+light_mask = 4
 scale = Vector2(0.56, 0.56)
 scroll_scale = Vector2(0.325, 0.325)
-scroll_offset = Vector2(7703, 4884.9995)
+scroll_offset = Vector2(5120, 5047)
 
-[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D13" unique_id=874018514]
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D13" unique_id=1375656115]
 light_mask = 2
 visibility_layer = 2
 z_index = -10
@@ -288,18 +217,19 @@ position = Vector2(4, -3)
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("6_7mycd")
 
-[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D13" unique_id=1083223639]
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D13" unique_id=1999776150]
 scale = Vector2(2.25, 2.25)
 energy = 765.8
 range_item_cull_mask = 2
 texture = ExtResource("6_7mycd")
 
-[node name="Parallax2D2" type="Parallax2D" parent="Backgrounds" unique_id=514010835]
+[node name="Parallax2D14" type="Parallax2D" parent="Backgrounds" unique_id=1850584234]
+light_mask = 4
 scale = Vector2(0.56, 0.56)
 scroll_scale = Vector2(0.325, 0.325)
-scroll_offset = Vector2(2572, 2515)
+scroll_offset = Vector2(7687, 5047)
 
-[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D2" unique_id=2142599899]
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D14" unique_id=1207569341]
 light_mask = 2
 visibility_layer = 2
 z_index = -10
@@ -307,18 +237,19 @@ position = Vector2(4, -3)
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("6_7mycd")
 
-[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D2" unique_id=1566873569]
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D14" unique_id=1364864581]
 scale = Vector2(2.25, 2.25)
 energy = 765.8
 range_item_cull_mask = 2
 texture = ExtResource("6_7mycd")
 
-[node name="Parallax2D3" type="Parallax2D" parent="Backgrounds" unique_id=1724717323]
+[node name="Parallax2D15" type="Parallax2D" parent="Backgrounds" unique_id=132241472]
+light_mask = 4
 scale = Vector2(0.56, 0.56)
 scroll_scale = Vector2(0.325, 0.325)
-scroll_offset = Vector2(0, 2523)
+scroll_offset = Vector2(10139, 5047)
 
-[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D3" unique_id=2070919303]
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D15" unique_id=506855973]
 light_mask = 2
 visibility_layer = 2
 z_index = -10
@@ -326,18 +257,19 @@ position = Vector2(4, -3)
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("6_7mycd")
 
-[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D3" unique_id=2564854]
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D15" unique_id=988891965]
 scale = Vector2(2.25, 2.25)
 energy = 765.8
 range_item_cull_mask = 2
 texture = ExtResource("6_7mycd")
 
-[node name="Parallax2D4" type="Parallax2D" parent="Backgrounds" unique_id=1343058371]
+[node name="Parallax2D6" type="Parallax2D" parent="Backgrounds" unique_id=809193791]
+light_mask = 4
 scale = Vector2(0.56, 0.56)
 scroll_scale = Vector2(0.325, 0.325)
-scroll_offset = Vector2(2580, 0)
+scroll_offset = Vector2(0, 2524)
 
-[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D4" unique_id=2118394696]
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D6" unique_id=1967656550]
 light_mask = 2
 visibility_layer = 2
 z_index = -10
@@ -345,8 +277,188 @@ position = Vector2(4, -3)
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("6_7mycd")
 
-[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D4" unique_id=1195534625]
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D6" unique_id=1877024686]
 scale = Vector2(2.25, 2.25)
 energy = 765.8
 range_item_cull_mask = 2
 texture = ExtResource("6_7mycd")
+
+[node name="Parallax2D7" type="Parallax2D" parent="Backgrounds" unique_id=111660897]
+light_mask = 4
+scale = Vector2(0.56, 0.56)
+scroll_scale = Vector2(0.325, 0.325)
+scroll_offset = Vector2(2553, 2523.9998)
+
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D7" unique_id=882916209]
+light_mask = 2
+visibility_layer = 2
+z_index = -10
+position = Vector2(4, -3)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("6_7mycd")
+
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D7" unique_id=1590387532]
+scale = Vector2(2.25, 2.25)
+energy = 765.8
+range_item_cull_mask = 2
+texture = ExtResource("6_7mycd")
+
+[node name="Parallax2D8" type="Parallax2D" parent="Backgrounds" unique_id=1742884625]
+light_mask = 4
+scale = Vector2(0.56, 0.56)
+scroll_scale = Vector2(0.325, 0.325)
+scroll_offset = Vector2(5106, 2524)
+
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D8" unique_id=567643865]
+light_mask = 2
+visibility_layer = 2
+z_index = -10
+position = Vector2(4, -3)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("6_7mycd")
+
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D8" unique_id=1157035673]
+scale = Vector2(2.25, 2.25)
+energy = 765.8
+range_item_cull_mask = 2
+texture = ExtResource("6_7mycd")
+
+[node name="Parallax2D9" type="Parallax2D" parent="Backgrounds" unique_id=1731605273]
+light_mask = 4
+scale = Vector2(0.56, 0.56)
+scroll_scale = Vector2(0.325, 0.325)
+scroll_offset = Vector2(7572, 2523.9998)
+
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D9" unique_id=1650898006]
+light_mask = 2
+visibility_layer = 2
+z_index = -10
+position = Vector2(4, -3)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("6_7mycd")
+
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D9" unique_id=1321129637]
+scale = Vector2(2.25, 2.25)
+energy = 765.8
+range_item_cull_mask = 2
+texture = ExtResource("6_7mycd")
+
+[node name="Parallax2D10" type="Parallax2D" parent="Backgrounds" unique_id=601499356]
+light_mask = 4
+scale = Vector2(0.56, 0.56)
+scroll_scale = Vector2(0.325, 0.325)
+scroll_offset = Vector2(10125, 2524)
+
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D10" unique_id=1183017629]
+light_mask = 2
+visibility_layer = 2
+z_index = -10
+position = Vector2(4, -3)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("6_7mycd")
+
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D10" unique_id=1598704717]
+scale = Vector2(2.25, 2.25)
+energy = 765.8
+range_item_cull_mask = 2
+texture = ExtResource("6_7mycd")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Backgrounds" unique_id=1655583306]
+light_mask = 4
+scale = Vector2(0.56, 0.56)
+scroll_scale = Vector2(0.325, 0.325)
+scroll_offset = Vector2(2581, 0)
+
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D2" unique_id=1237556159]
+light_mask = 2
+visibility_layer = 2
+z_index = -10
+position = Vector2(4, -3)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("6_7mycd")
+
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D2" unique_id=500254326]
+scale = Vector2(2.25, 2.25)
+energy = 765.8
+range_item_cull_mask = 2
+texture = ExtResource("6_7mycd")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Backgrounds" unique_id=923363040]
+light_mask = 4
+scale = Vector2(0.56, 0.56)
+scroll_scale = Vector2(0.325, 0.325)
+scroll_offset = Vector2(5061, 0)
+
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D3" unique_id=2095851887]
+light_mask = 2
+visibility_layer = 2
+z_index = -10
+position = Vector2(4, -3)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("6_7mycd")
+
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D3" unique_id=1995784863]
+scale = Vector2(2.25, 2.25)
+energy = 765.8
+range_item_cull_mask = 2
+texture = ExtResource("6_7mycd")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Backgrounds" unique_id=47405315]
+light_mask = 4
+scale = Vector2(0.56, 0.56)
+scroll_scale = Vector2(0.325, 0.325)
+scroll_offset = Vector2(7599, 0)
+
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D4" unique_id=1179271916]
+light_mask = 2
+visibility_layer = 2
+z_index = -10
+position = Vector2(4, -3)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("6_7mycd")
+
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D4" unique_id=1250138803]
+scale = Vector2(2.25, 2.25)
+energy = 765.8
+range_item_cull_mask = 2
+texture = ExtResource("6_7mycd")
+
+[node name="Parallax2D5" type="Parallax2D" parent="Backgrounds" unique_id=465942682]
+light_mask = 4
+scale = Vector2(0.56, 0.56)
+scroll_scale = Vector2(0.325, 0.325)
+scroll_offset = Vector2(10123, 0)
+
+[node name="Space2" type="Sprite2D" parent="Backgrounds/Parallax2D5" unique_id=947826083]
+light_mask = 2
+visibility_layer = 2
+z_index = -10
+position = Vector2(4, -3)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("6_7mycd")
+
+[node name="PointLight2D" type="PointLight2D" parent="Backgrounds/Parallax2D5" unique_id=263310156]
+scale = Vector2(2.25, 2.25)
+energy = 765.8
+range_item_cull_mask = 2
+texture = ExtResource("6_7mycd")
+
+[node name="Player" parent="." unique_id=612887957 instance=ExtResource("6_272bh")]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1018118479 groups=["UI"]]
+layer = 2
+
+[node name="Button" type="Button" parent="UI" unique_id=1736944887]
+z_index = 1
+offset_left = 471.0
+offset_top = 339.0
+offset_right = 479.0
+offset_bottom = 347.0
+scale = Vector2(35.56939, 17.704304)
+
+[node name="Transition" type="Sprite2D" parent="UI" unique_id=1357726607]
+self_modulate = Color(0.37659767, 0.42061576, 1.3802108, 1)
+position = Vector2(573, 367)
+texture = ExtResource("4_272bh")
+
+[connection signal="pressed" from="UI/Button" to="." method="_on_button_pressed"]
