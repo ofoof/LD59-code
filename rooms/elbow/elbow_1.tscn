@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://slh7sk1t8vlm"]
+
+[ext_resource type="Texture2D" uid="uid://jyum3ttm37aw" path="res://arts/rooms/square/RoomTile4OlieElbow-Junction__Black.png" id="1_tdh3h"]
+[ext_resource type="PackedScene" uid="uid://bj8v63vyt0ben" path="res://alien_1.tscn" id="2_8chjs"]
+[ext_resource type="PackedScene" uid="uid://tv715gido8ly" path="res://alien_spawner.tscn" id="3_7ult4"]
+[ext_resource type="PackedScene" uid="uid://g4iluaesv63b" path="res://wall.tscn" id="3_p2et7"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_o1wug"]
+vertices = PackedVector2Array(60.867188, 24.851563, 158, -150, 158, 262, -10.8515625, 130.86719, -142, 262, -142, 150, -116.86719, 59.148438, -45.148438, -46.867188, -254, -150, -254, 150)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 0, 2), PackedInt32Array(3, 2, 4, 5, 6), PackedInt32Array(1, 0, 7), PackedInt32Array(8, 1, 7), PackedInt32Array(9, 8, 7, 6), PackedInt32Array(6, 5, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-264, 160.00002, -264, -159.99998, 168, -160, 168.00002, 272, -151.99998, 272, -152, 160)])
+
+[node name="Elbow1" type="Node2D" unique_id=276151558]
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=609692330]
+z_index = -5
+rotation = 1.5707964
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_tdh3h")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1716515890]
+position = Vector2(0, -8)
+rotation = 1.5707964
+navigation_polygon = SubResource("NavigationPolygon_o1wug")
+
+[node name="Wall3" parent="NavigationRegion2D" unique_id=701578748 instance=ExtResource("3_p2et7")]
+position = Vector2(-28, 42.000004)
+rotation = 0.5947383
+scale = Vector2(0.5, 0.5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=181665927]
+rotation = 1.5707964
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1068123696]
+position = Vector2(0, -459)
+polygon = PackedVector2Array(-256, 283, -256, 203, 256, 203, 256, 715, 176, 715, 176, 283)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=608962122]
+rotation = 1.5707964
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=1729440897]
+position = Vector2(-3, 215)
+polygon = PackedVector2Array(-252.99998, -38.999985, -252.99998, 41.00003, -173, 41, -173, -39)
+
+[node name="AlienSpawner" parent="." unique_id=517353845 instance=ExtResource("3_7ult4")]
+position = Vector2(26.666668, 32)
+aliens = Array[PackedScene]([ExtResource("2_8chjs")])
+chance = 22
+
+[node name="AlienSpawner2" parent="." unique_id=81249442 instance=ExtResource("3_7ult4")]
+position = Vector2(16, -144)
+aliens = Array[PackedScene]([ExtResource("2_8chjs")])
+chance = 22
+
+[node name="AlienSpawner3" parent="." unique_id=1923785357 instance=ExtResource("3_7ult4")]
+position = Vector2(-181.33334, -106.666664)
+aliens = Array[PackedScene]([ExtResource("2_8chjs")])
+chance = 22

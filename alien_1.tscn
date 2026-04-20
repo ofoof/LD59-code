@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bj8v63vyt0ben"]
+
+[ext_resource type="Script" uid="uid://dpsbnu624e175" path="res://alien.gd" id="1_0tdfy"]
+[ext_resource type="Texture2D" uid="uid://cx8bnflxmm3bi" path="res://arts/alien-1.png" id="2_0tdfy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_py7sm"]
+radius = 37.363083
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0tdfy"]
+radius = 78.40918
+
+[node name="Alien1" type="CharacterBody2D" unique_id=325876984]
+collision_layer = 8
+collision_mask = 13
+motion_mode = 1
+script = ExtResource("1_0tdfy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2105764594]
+shape = SubResource("CircleShape2D_py7sm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=771346392]
+z_index = 2
+position = Vector2(-12, -7)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0tdfy")
+
+[node name="HitCooldown" type="Timer" parent="." unique_id=986082577]
+wait_time = 0.1
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1935070344]
+navigation_layers = 255
+avoidance_enabled = true
+radius = 100.0
+neighbor_distance = 1000.0
+avoidance_layers = 255
+avoidance_mask = 255
+
+[node name="Area2D" type="Area2D" parent="." unique_id=453745247]
+collision_layer = 8
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1802814711]
+shape = SubResource("CircleShape2D_0tdfy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

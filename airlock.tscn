@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dwugbfquqe3oj"]
+
+[ext_resource type="Texture2D" uid="uid://bdgw64onychgd" path="res://arts/rooms/airlock.png" id="1_3yst8"]
+
+[node name="Airlock" type="Sprite2D" unique_id=2051355824]
+z_index = -2
+scale = Vector2(0.125, 0.37)
+texture = ExtResource("1_3yst8")
+offset = Vector2(25, -59)

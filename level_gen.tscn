@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://li6j4amvfp3y"]
+
+[ext_resource type="Script" uid="uid://b3ay3q8qseuyj" path="res://level_gen.gd" id="1_s4g8x"]
+[ext_resource type="PackedScene" uid="uid://dykin1fvswnx" path="res://rooms/halls/hallway.tscn" id="2_rroed"]
+[ext_resource type="PackedScene" uid="uid://b3ovxq1do5apb" path="res://rooms/halls/hall_v.tscn" id="3_0g0uc"]
+[ext_resource type="PackedScene" uid="uid://nopkxkauxgpm" path="res://rooms/cross/crossway.tscn" id="3_go70u"]
+[ext_resource type="PackedScene" uid="uid://dolped2kr60ah" path="res://rooms/elbow/elbow.tscn" id="4_30a2p"]
+[ext_resource type="PackedScene" uid="uid://bjhfi04k18p15" path="res://rooms/end/end_room.tscn" id="4_go70u"]
+[ext_resource type="PackedScene" uid="uid://c34ae52ncoop" path="res://Player/character_body_2d.tscn" id="4_rroed"]
+[ext_resource type="PackedScene" uid="uid://slh7sk1t8vlm" path="res://rooms/elbow/elbow_1.tscn" id="5_jhiib"]
+[ext_resource type="PackedScene" uid="uid://dwugbfquqe3oj" path="res://airlock.tscn" id="5_lx3gp"]
+[ext_resource type="PackedScene" uid="uid://dwkfjte7o4qyt" path="res://rooms/t/tbend.tscn" id="5_vb3xr"]
+[ext_resource type="PackedScene" uid="uid://dm7x2cxqqgviv" path="res://rooms/elbow/elbow_2.tscn" id="6_0g0uc"]
+[ext_resource type="PackedScene" uid="uid://cncvgp5l0txky" path="res://rooms/t/tbend_1.tscn" id="6_32kkc"]
+[ext_resource type="PackedScene" uid="uid://sxqm2vebq2ka" path="res://rooms/elbow/elbow_3.tscn" id="7_54hn3"]
+[ext_resource type="PackedScene" uid="uid://5enln25feds6" path="res://rooms/t/tbend_2.tscn" id="7_hxonm"]
+[ext_resource type="PackedScene" uid="uid://bxk26gttmmcdh" path="res://rooms/t/tbend_3.tscn" id="8_17oog"]
+
+[node name="Level Gen" type="Node2D" unique_id=1346862723]
+script = ExtResource("1_s4g8x")
+HallH = Array[PackedScene]([ExtResource("2_rroed")])
+HallV = Array[PackedScene]([ExtResource("3_0g0uc")])
+Cross = Array[PackedScene]([ExtResource("3_go70u")])
+THall0 = Array[PackedScene]([ExtResource("5_vb3xr")])
+THall1 = Array[PackedScene]([ExtResource("6_32kkc")])
+THall2 = Array[PackedScene]([ExtResource("7_hxonm")])
+THall3 = Array[PackedScene]([ExtResource("8_17oog")])
+Elbow0 = Array[PackedScene]([ExtResource("4_30a2p")])
+Elbow1 = Array[PackedScene]([ExtResource("5_jhiib")])
+Elbow2 = Array[PackedScene]([ExtResource("6_0g0uc")])
+Elbow3 = Array[PackedScene]([ExtResource("7_54hn3")])
+EndRoom = Array[PackedScene]([ExtResource("4_go70u")])
+Airlock = ExtResource("5_lx3gp")
+
+[node name="Player" parent="." unique_id=612887957 instance=ExtResource("4_rroed")]
