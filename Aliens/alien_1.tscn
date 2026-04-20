@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bj8v63vyt0ben"]
 
-[ext_resource type="Script" uid="uid://dpsbnu624e175" path="res://alien.gd" id="1_0tdfy"]
+[ext_resource type="Script" uid="uid://dpsbnu624e175" path="res://Aliens/alien.gd" id="1_0tdfy"]
 [ext_resource type="Texture2D" uid="uid://cx8bnflxmm3bi" path="res://arts/alien-1.png" id="2_0tdfy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_py7sm"]
