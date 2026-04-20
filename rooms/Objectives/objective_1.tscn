@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d35uswpibsci8" path="res://arts/rooms/square/RoomTile4OlieEnd-Junction__Black.png" id="1_jygoq"]
 [ext_resource type="PackedScene" uid="uid://g4iluaesv63b" path="res://wall.tscn" id="2_e86qq"]
-[ext_resource type="PackedScene" uid="uid://dwugbfquqe3oj" path="res://airlock.tscn" id="3_c2f1j"]
+[ext_resource type="PackedScene" uid="uid://dwugbfquqe3oj" path="res://rooms/airlock.tscn" id="3_c2f1j"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kmcbe"]
 vertices = PackedVector2Array(134.49219, 18.53125, 147, -29.882813, 147, 271, -113.17969, -136.33594, -153, -72.07031, -153, -141, 147, -141, 96.86719, 74.85156, 25.148438, 180.86719, -13.9140625, 154.4375, -153, 271, -98.55469, 184.89063, -9.1484375, 3.1328125, -21.390625, 21.234375, -21.445313, 21.109375, 27.742188, -9.046875, 147, -92.890625, 55.507813, -116.53125, -26.8125, -82.82031, -80.82031, 4.3359375, -141.89063, 64.44531, -153, -40.382813)

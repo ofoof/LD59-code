@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bk8sc5lj2ajsc"]
+
+[ext_resource type="Texture2D" uid="uid://bvigpdvfydbef" path="res://arts/rooms/Door4OliesGame.png" id="1_ba8gm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ba8gm"]
+size = Vector2(250.66667, 1408)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1516468460]
+scale = Vector2(0.57, 0.35)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1921954456]
+position = Vector2(-2.6666641, -3.0517578e-05)
+shape = SubResource("RectangleShape2D_ba8gm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=65401230]
+position = Vector2(-3, 0)
+rotation = 1.5707964
+texture = ExtResource("1_ba8gm")
