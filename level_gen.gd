@@ -106,7 +106,6 @@ func _ready():
 	for i in range(4):
 		var new_tile = get_used_tiles().pick_random()
 		place_tile_string(grid[new_tile[0]][new_tile[1]],new_tile,10)
-	await get_tree().create_timer(10.0).timeout
 	for i in range(bounds[0]):
 		for j in range(bounds[1]):
 			if [i,j] in get_used_tiles():

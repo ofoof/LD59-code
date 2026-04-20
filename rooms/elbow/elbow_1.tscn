@@ -50,14 +50,14 @@ polygon = PackedVector2Array(-252.99998, -38.999985, -252.99998, 41.00003, -173,
 [node name="AlienSpawner" parent="." unique_id=517353845 instance=ExtResource("3_7ult4")]
 position = Vector2(26.666668, 32)
 aliens = Array[PackedScene]([ExtResource("2_8chjs")])
-chance = 22
+chance = 20
 
 [node name="AlienSpawner2" parent="." unique_id=81249442 instance=ExtResource("3_7ult4")]
 position = Vector2(16, -144)
 aliens = Array[PackedScene]([ExtResource("2_8chjs")])
-chance = 22
+chance = 20
 
 [node name="AlienSpawner3" parent="." unique_id=1923785357 instance=ExtResource("3_7ult4")]
 position = Vector2(-181.33334, -106.666664)
 aliens = Array[PackedScene]([ExtResource("2_8chjs")])
-chance = 22
+chance = 20
