@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bepp2w7txxw77"
+path="res://.godot/imported/Gunshot project.wav-4ae9beb5b0de71aa3b37adafd1efe939.sample"
+
+[deps]
+
+source_file="res://sounds/Gunshot project.wav"
+dest_files=["res://.godot/imported/Gunshot project.wav-4ae9beb5b0de71aa3b37adafd1efe939.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

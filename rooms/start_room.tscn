@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://brtiyh8b5m0va" path="res://arts/pointlight.png" id="4_sds2w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_herjy"]
-radius = 695.95465
+radius = 499.49554
 
 [node name="StartRoom" type="Node2D" unique_id=1689067306]
 scale = Vector2(1.5, 1.5)
@@ -75,7 +75,7 @@ collision_layer = 0
 shape = SubResource("CircleShape2D_herjy")
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=310377915]
-wait_time = 30.0
+wait_time = 32.0
 
 [node name="HoldTimer" type="Timer" parent="." unique_id=1953384255]
 

@@ -2,12 +2,28 @@
 
 [ext_resource type="Script" uid="uid://dpsbnu624e175" path="res://Aliens/alien.gd" id="1_w2l0k"]
 [ext_resource type="Texture2D" uid="uid://do0x6a84yjutl" path="res://arts/Slime.png" id="2_w2l0k"]
+[ext_resource type="AudioStream" uid="uid://bnxyn8fgv8r4n" path="res://sounds/alienMovement1.wav" id="3_a6xw2"]
+[ext_resource type="AudioStream" uid="uid://bg2tnpc3jsot8" path="res://sounds/alienMovement2.wav" id="4_ar5cj"]
+[ext_resource type="AudioStream" uid="uid://dp2tyjrq130r5" path="res://sounds/alienMovement3.wav" id="5_75guy"]
+[ext_resource type="AudioStream" uid="uid://dvwjk6f3vpjp" path="res://sounds/alienAttack.wav" id="6_75guy"]
+[ext_resource type="AudioStream" uid="uid://b5100b58lxu2u" path="res://sounds/alienGrowl.wav" id="7_2aqrh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lngoa"]
 radius = 58.00862
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w2l0k"]
 radius = 103.31021
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2aqrh"]
+streams_count = 3
+stream_0/stream = ExtResource("3_a6xw2")
+stream_1/stream = ExtResource("4_ar5cj")
+stream_2/stream = ExtResource("5_75guy")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g6ggs"]
+streams_count = 2
+stream_0/stream = ExtResource("6_75guy")
+stream_1/stream = ExtResource("7_2aqrh")
 
 [node name="alien_2" type="CharacterBody2D" unique_id=210111668]
 collision_layer = 8
@@ -49,5 +65,20 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=253466582]
 shape = SubResource("CircleShape2D_w2l0k")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=302126121]
+stream = SubResource("AudioStreamRandomizer_2aqrh")
+max_distance = 300.0
+
+[node name="TimerWalk" type="Timer" parent="." unique_id=1261579575]
+one_shot = true
+
+[node name="TimerHit" type="Timer" parent="." unique_id=1690338830]
+one_shot = true
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=1821785628]
+stream = SubResource("AudioStreamRandomizer_g6ggs")
+max_distance = 300.0
+max_polyphony = 2
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

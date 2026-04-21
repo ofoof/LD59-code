@@ -115,7 +115,6 @@ func _ready():
 	for i in range(bounds[0]):
 		for j in range(bounds[1]):
 			if [i,j] in get_used_tiles():
-				print("force attempt "+str(i)+""+str(j))
 				force_room([i,j],[Elbow0_tag,Elbow1_tag,Elbow2_tag,Elbow3_tag,HallH_tag,HallV_tag,HallH_tag,HallV_tag])
 	#for i in range(20):
 	#	var new_tile = get_used_tiles().pick_random()
@@ -163,9 +162,7 @@ func get_next_placement(placement, placement_position):
 	if available:
 		var empty_positions = []
 		for i in range(len(looked[0])):
-			print(str([placement_position[0]+looked[1][i][0],placement_position[1]+looked[1][i][1]])+"checker")
 			for j in range(len(available)):
-				print(available[j])
 				if [placement_position[0]+looked[1][i][0],placement_position[1]+looked[1][i][1]] == available[j]:
 					empty_positions.append(looked[0][i])
 		pos_loc = empty_positions.pick_random()
@@ -195,7 +192,6 @@ func get_next_placement(placement, placement_position):
 
 func force_room(new_position,tiles):
 	var rooms = []
-	print(new_position)
 	if available_rooms(new_position):
 		var empty_location = available_rooms(new_position).pick_random()
 		if empty_location:
@@ -306,7 +302,6 @@ func load_ends(objectives):
 		new_tile.rotation = end_room[2]
 		add_child.call_deferred(new_tile)
 	for obj_room in Objected:
-		print(obj_room)
 		var new_tile=ObjectiveRooms.pick_random().instantiate()
 		new_tile.position = Vector2(obj_room[1][0]*TILE_SIZE,obj_room[1][1]*TILE_SIZE)
 		new_tile.rotation = obj_room[2]

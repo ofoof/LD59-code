@@ -30,6 +30,9 @@
 [ext_resource type="PackedScene" uid="uid://depxlu8h7m8wt" path="res://Player/gui.tscn" id="28_1mqe7"]
 [ext_resource type="PackedScene" uid="uid://d2boh05cl5mbi" path="res://radar.tscn" id="29_qwwot"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="30_uhmsy"]
+[ext_resource type="AudioStream" uid="uid://bepp2w7txxw77" path="res://sounds/Gunshot project.wav" id="31_b0xla"]
+[ext_resource type="AudioStream" uid="uid://sogehnpmmqo6" path="res://sounds/reload1.wav" id="32_xp1cg"]
+[ext_resource type="AudioStream" uid="uid://hkqimmmg7kyo" path="res://sounds/reload2.wav" id="33_3pi0l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ghijl"]
 radius = 56.0803
@@ -125,7 +128,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="HitCooldown" type="Timer" parent="." unique_id=1133061525]
-wait_time = 0.3
+wait_time = 0.18
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1587065419]
@@ -181,3 +184,12 @@ modulate = Color(0.003921569, 0.003921569, 0.003921569, 1)
 position = Vector2(3.999999, -220.00002)
 scale = Vector2(6.09375, 7.40625)
 texture = ExtResource("30_uhmsy")
+
+[node name="Shootio" type="AudioStreamPlayer2D" parent="." unique_id=497304277]
+stream = ExtResource("31_b0xla")
+
+[node name="Reload1" type="AudioStreamPlayer2D" parent="." unique_id=859590505]
+stream = ExtResource("32_xp1cg")
+
+[node name="Reload2" type="AudioStreamPlayer2D" parent="." unique_id=1342917858]
+stream = ExtResource("33_3pi0l")

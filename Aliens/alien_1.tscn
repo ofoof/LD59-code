@@ -2,12 +2,28 @@
 
 [ext_resource type="Script" uid="uid://dpsbnu624e175" path="res://Aliens/alien.gd" id="1_0tdfy"]
 [ext_resource type="Texture2D" uid="uid://cx8bnflxmm3bi" path="res://arts/alien-1.png" id="2_0tdfy"]
+[ext_resource type="AudioStream" uid="uid://bnxyn8fgv8r4n" path="res://sounds/alienMovement1.wav" id="3_7nnmq"]
+[ext_resource type="AudioStream" uid="uid://b5100b58lxu2u" path="res://sounds/alienGrowl.wav" id="3_lwk23"]
+[ext_resource type="AudioStream" uid="uid://bg2tnpc3jsot8" path="res://sounds/alienMovement2.wav" id="4_6kpw2"]
+[ext_resource type="AudioStream" uid="uid://dvwjk6f3vpjp" path="res://sounds/alienAttack.wav" id="4_7nnmq"]
+[ext_resource type="AudioStream" uid="uid://dp2tyjrq130r5" path="res://sounds/alienMovement3.wav" id="5_kye3u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_py7sm"]
 radius = 37.363083
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0tdfy"]
 radius = 78.40918
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qyr4a"]
+streams_count = 3
+stream_0/stream = ExtResource("3_7nnmq")
+stream_1/stream = ExtResource("4_6kpw2")
+stream_2/stream = ExtResource("5_kye3u")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_kye3u"]
+streams_count = 2
+stream_0/stream = ExtResource("4_7nnmq")
+stream_1/stream = ExtResource("3_lwk23")
 
 [node name="Alien1" type="CharacterBody2D" unique_id=325876984]
 collision_layer = 8
@@ -43,5 +59,22 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1802814711]
 shape = SubResource("CircleShape2D_0tdfy")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2077961550]
+stream = SubResource("AudioStreamRandomizer_qyr4a")
+max_distance = 300.0
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=981775692]
+stream = SubResource("AudioStreamRandomizer_kye3u")
+max_distance = 300.0
+max_polyphony = 2
+
+[node name="TimerWalk" type="Timer" parent="." unique_id=944738760]
+wait_time = 0.5
+one_shot = true
+
+[node name="TimerHit" type="Timer" parent="." unique_id=454991885]
+wait_time = 0.5
+one_shot = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

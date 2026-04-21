@@ -35,6 +35,10 @@ func _ready():
 func _process(delta):
 	if player:
 		movement_target_position = player.global_position
+		if $TimerWalk.time_left==0:
+			$AudioStreamPlayer2D.play()
+			$TimerWalk.start()
+			
 		if (player.global_position-global_position).length()<DETECTION_RANGE:
 			if rotate_to_player:
 				global_rotation = global_position.angle_to_point(player.global_position)
@@ -73,6 +77,9 @@ func _physics_process(delta):
 		var collider = collision.get_collider()
 		if collider.get_collision_layer_value(1):
 			var damage = randi_range(damage_range[0],damage_range[1])
+			if $TimerHit.time_left==0:
+				$AudioStreamPlayer2D2.play()
+				$TimerHit.start()
 			collider.take_damage(damage)
 
 func take_damage(damage):
@@ -95,4 +102,7 @@ func _on_area_2d_body_entered(body):
 		body.queue_free()
 	if body.get_collision_layer_value(1):
 			var damage = randi_range(damage_range[0],damage_range[1])
+			if $TimerHit.time_left==0:
+				$AudioStreamPlayer2D2.play()
+				$TimerHit.start()
 			body.take_damage(damage)

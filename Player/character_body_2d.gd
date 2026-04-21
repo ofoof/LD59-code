@@ -8,7 +8,7 @@ const TURN_SPEED = 5.0
 @export var MAX_HEALTH = 5.0
 var health = 0
 var zoomed = false
-@export var max_bullets = 8
+@export var max_bullets = 6
 @export var bullet_damage = 4
 var bullets = max_bullets
 @export var bullet: PackedScene
@@ -68,6 +68,7 @@ func shoot():
 			newBullet.damage = bullet_damage
 			get_tree().current_scene.add_child(newBullet)
 			$CooldownTimer.start()
+			$Shootio.play()
 			bullets-=1
 			update_bullets()
 	else:
@@ -77,12 +78,12 @@ func reload():
 		bullets = 0
 		update_bullets()
 		reloading = true
-		print("reloading")
+		$Reload1.play()
 		await get_tree().create_timer(2.0).timeout
 		bullets = max_bullets
 		update_bullets()
 		reloading = false
-		print("reloaded")
+		$Reload2.play()
 func take_damage(damage):
 	if $HitCooldown.time_left<=0:
 		health-=damage

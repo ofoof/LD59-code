@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c1o7112d6pq5m"]
 
 [ext_resource type="Script" uid="uid://dyh66ry8r66kl" path="res://Player/bullet.gd" id="1_kxw81"]
-[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_tqmay"]
+[ext_resource type="Texture2D" uid="uid://diunhjxekfbfb" path="res://arts/bullet.png" id="2_tqmay"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d7yj7"]
 
@@ -13,7 +13,7 @@ lock_rotation = true
 script = ExtResource("1_kxw81")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=392466134]
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.025, 0.025)
 texture = ExtResource("2_tqmay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1771421399]

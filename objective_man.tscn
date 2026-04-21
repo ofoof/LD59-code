@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cov1eeiy1hl2o"]
+
+[ext_resource type="Texture2D" uid="uid://bc11kaibpdxgv" path="res://arts/frame-1.png" id="1_l3mxj"]
+[ext_resource type="Script" uid="uid://c7uv2oenhsoho" path="res://objective_man.gd" id="2_2oovw"]
+[ext_resource type="Texture2D" uid="uid://brtiyh8b5m0va" path="res://arts/pointlight.png" id="3_fv5k0"]
+[ext_resource type="AudioStream" uid="uid://1a7ia8yejow6" path="res://sounds/Recording (30).wav" id="4_fv5k0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8sg23"]
+radius = 69.230774
+
+[node name="Area2D" type="Area2D" unique_id=1402666860]
+scale = Vector2(0.78, 0.78)
+script = ExtResource("2_2oovw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1427737884]
+shape = SubResource("CircleShape2D_8sg23")
+
+[node name="bottom_thing" type="Sprite2D" parent="." unique_id=2038832317]
+z_index = -5
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("3_fv5k0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=28660635]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_l3mxj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1546325239]
+stream = ExtResource("4_fv5k0")
+pitch_scale = 0.81
+
+[connection signal="body_entered" from="." to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

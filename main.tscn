@@ -448,23 +448,55 @@ texture = ExtResource("6_7mycd")
 [node name="UI" type="CanvasLayer" parent="." unique_id=1018118479 groups=["UI"]]
 layer = 2
 
-[node name="StartButton" type="Button" parent="UI" unique_id=1736944887]
+[node name="ContinueButton" type="Button" parent="UI" unique_id=2070233206]
 z_index = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -153.0
-offset_top = 370.0
+offset_top = 434.0
 offset_right = 153.0
-offset_bottom = 533.0
+offset_bottom = 597.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 94
-text = "Start"
+text = "Continue"
 
 [node name="Transition" type="Sprite2D" parent="UI" unique_id=1357726607]
 self_modulate = Color(0.37659767, 0.42061576, 1.3802108, 1)
 position = Vector2(573, 367)
 texture = ExtResource("4_272bh")
+
+[node name="Score_rooms" type="Label" parent="UI/Transition" unique_id=2067582997]
+offset_left = -510.0
+offset_top = -298.0
+offset_right = -29.0
+offset_bottom = -188.0
+theme_override_font_sizes/font_size = 80
+text = "Room Score: "
+
+[node name="Subscore_rooms" type="Label" parent="UI/Transition" unique_id=843944053]
+offset_left = -510.0
+offset_top = -197.0
+offset_right = -8.0
+offset_bottom = -87.0
+theme_override_font_sizes/font_size = 50
+text = "Room Score: "
+
+[node name="Label2" type="Label" parent="UI/Transition" unique_id=2143132473]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1073.0
+offset_top = -816.0
+offset_right = -111.0
+offset_bottom = -528.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "Loading..."
+horizontal_alignment = 1
 
 [node name="TimeLeft" type="Label" parent="UI" unique_id=1712085992]
 offset_left = 44.0
@@ -477,7 +509,7 @@ horizontal_alignment = 2
 
 [node name="GameOver" type="Sprite2D" parent="UI" unique_id=1207438315]
 self_modulate = Color(0, 0.40784314, 1, 1)
-position = Vector2(556, 331)
+position = Vector2(420, 242)
 texture = ExtResource("4_272bh")
 
 [node name="GO1" type="Label" parent="UI/GameOver" unique_id=1869739295]
@@ -486,10 +518,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1430.0
-offset_top = -1276.0
-offset_right = -617.0
-offset_bottom = -1071.0
+offset_left = -1435.0
+offset_top = -1295.0
+offset_right = -622.0
+offset_bottom = -1090.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -503,20 +535,130 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1430.0
-offset_top = -1068.0
-offset_right = -617.0
-offset_bottom = -863.0
+offset_left = -1426.0
+offset_top = -1132.0
+offset_right = -613.0
+offset_bottom = -927.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 112
+theme_override_font_sizes/font_size = 86
 text = "Game Over"
+
+[node name="GO3" type="Label" parent="UI/GameOver" unique_id=56718121]
+offset_left = -405.0
+offset_top = -14.0
+offset_right = 408.0
+offset_bottom = 191.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 102
+text = "Game Over"
+
+[node name="GO4" type="Label" parent="UI/GameOver" unique_id=169629309]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1421.0
+offset_top = -928.0
+offset_right = -608.0
+offset_bottom = -627.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 65
+text = "Game Over"
+clip_text = true
+
+[node name="GameOver2" type="Sprite2D" parent="UI/GameOver" unique_id=1598194031]
+self_modulate = Color(0, 0.40784314, 1, 1)
+z_index = -2
+position = Vector2(304, 79)
+texture = ExtResource("4_272bh")
+
+[node name="Start_screen" type="Sprite2D" parent="UI" unique_id=1073656536]
+self_modulate = Color(0.81960785, 0.3647059, 0.7647059, 1)
+position = Vector2(549, 348)
+texture = ExtResource("4_272bh")
+
+[node name="StartButton" type="Button" parent="UI/Start_screen" unique_id=1736944887]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1177.0
+offset_top = -935.0
+offset_right = -871.0
+offset_bottom = -772.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 94
+text = "Start"
+
+[node name="Label" type="Label" parent="UI/Start_screen" unique_id=1324277787]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1505.0
+offset_top = -1347.0
+offset_right = -543.0
+offset_bottom = -1059.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 76
+text = "Super Space Rescue Game"
+
+[node name="Label2" type="Label" parent="UI/Start_screen" unique_id=1882322420]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1505.0
+offset_top = -1115.0
+offset_right = -543.0
+offset_bottom = -827.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "Find the beacons and pick them up,
+and move on to the next ship
+(Not all beacons must be retrieved, but a small 
+amount of points will be lost for each one left behind)"
+horizontal_alignment = 1
+
+[node name="Loader1" type="Sprite2D" parent="UI" unique_id=429944176]
+self_modulate = Color(0.16470589, 0.50980395, 0.78431374, 1)
+z_index = -3
+z_as_relative = false
+position = Vector2(549, 348)
+texture = ExtResource("4_272bh")
+
+[node name="Label2" type="Label" parent="UI/Loader1" unique_id=877486452]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1505.0
+offset_top = -1168.0
+offset_right = -543.0
+offset_bottom = -880.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "Loading..."
 horizontal_alignment = 1
 
 [node name="GameTimer" type="Timer" parent="." unique_id=1828913001]
 wait_time = 601.0
 one_shot = true
 
-[connection signal="pressed" from="UI/StartButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="UI/ContinueButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="UI/Start_screen/StartButton" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1a7ia8yejow6"
+path="res://.godot/imported/Recording (30).wav-5b339c52e650de15c77e3c68ef884467.sample"
+
+[deps]
+
+source_file="res://sounds/Recording (30).wav"
+dest_files=["res://.godot/imported/Recording (30).wav-5b339c52e650de15c77e3c68ef884467.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -9,6 +9,7 @@ var tile_size = 0
 var track_dist = 100
 var dial_size = 400
 var found = 0
+var left = 0
 var start_locator
 var start_pos = [0,0]
 func _ready():
@@ -46,6 +47,7 @@ func _process(delta):
 				next_tracker[0].queue_free()
 				trackers.erase(next_tracker)
 				found += 1
+				left -= 1
 				change_found(found)
 	if start_locator:
 		start_locator.position = (Vector2(start_pos[0],start_pos[1])-(global_position/tile_size))*track_dist
@@ -70,8 +72,7 @@ func reset_radar():
 		tile_size = generator.TILE_SIZE
 		var tiles = generator.Ends
 		var obj = clamp(floor(len(tiles)/3)+1,2,5)
-		print(len(tiles))
-		print(obj)
+		left += obj
 		var locations = generator.load_ends(obj)
 		for location in locations:
 			var new_tracker = tracker.instantiate()
